@@ -19,7 +19,7 @@ const source = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fergandson.com"),
+  metadataBase: new URL("https://ferg-and-sons-roofing.vercel.app"),
   title: {
     default: `${company.legalName} · Roof maintenance in ${company.serviceArea}`,
     template: `%s · ${company.shortName}`,
