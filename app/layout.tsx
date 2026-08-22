@@ -21,10 +21,10 @@ const source = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ferg-and-sons-roofing.vercel.app"),
   title: {
-    default: `${company.legalName} · Roof maintenance in ${company.serviceArea}`,
+    default: `${company.legalName} · Maintenance, repairs, and new roofs`,
     template: `%s · ${company.shortName}`,
   },
-  description: `${company.legalName}. Yearly roof maintenance in ${company.serviceArea}.`,
+  description: `${company.legalName}. Yearly memberships, roof repairs and inspections, and new roofs in ${company.serviceArea}.`,
   openGraph: {
     title: company.legalName,
     description: company.tagline,

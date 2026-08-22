@@ -23,12 +23,13 @@ export default function AboutPage() {
             and Michigan, alongside other full-time work.
           </p>
           <p>
-            {company.legalName} does yearly maintenance: inspect, fix the small
-            stuff, leave a written report. Bigger jobs are bid out. You still
-            call this number.
+            {company.legalName} does yearly maintenance, repairs, and new
+            roofs. Inspect, fix the small stuff, leave a written report. When
+            the roof is done, we quote the replacement and we put it on.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link href="/contact" className="btn-primary">Request an inspection</Link>
+            <Link href="/contact?need=inspection" className="btn-primary">Request an inspection</Link>
+            <Link href="/contact?need=bid" className="btn-ghost">New roof</Link>
             <a href={`tel:${company.tel}`} className="btn-ghost">
               Call {displayPhone()}
             </a>

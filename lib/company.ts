@@ -1,7 +1,7 @@
 export const company = {
   legalName: "Ferg and Sons Roofing, LLC",
   shortName: "Ferg and Sons Roofing",
-  tagline: "Yearly roof maintenance in Sublette County.",
+  tagline: "Yearly maintenance, repairs, and new roofs in Sublette County.",
   email: "josh.fergusonsublette@gmail.com",
   phone: "307-231-6026",
   tel: "+13072316026",
@@ -55,9 +55,10 @@ export const plans = {
     price: 499,
     allowance: 350,
     per: "year",
-    blurb: "Same visit and report. Up to $350 in repairs, debris clean if the roof is safe, and 10% off extra labor after that.",
+    blurb: "Same visit and report. House, attached garage, and one extra building. Up to $350 in repairs, debris clean if the roof is safe, and 10% off extra labor after that.",
     features: [
       "Everything in Essential",
+      "House, attached garage, plus one additional building (detached garage, shop, or similar)",
       "Small repairs on that visit, up to $350",
       "Spring clean / debris off if the roof is safe that day",
       "10% off extra small-repair labor after the $350",
@@ -81,7 +82,7 @@ export const reportSections = [
   },
   {
     title: "Replacement recommended",
-    body: "Beyond maintenance. Bid separately. You still call us.",
+    body: "Beyond maintenance. We quote the replacement and we install it.",
   },
 ] as const;
 
@@ -174,7 +175,7 @@ export const replacementIssues = [
   },
   {
     title: "Metal panels rusted through or the coating is gone",
-    body: "Loose screws are maintenance. Panels that have failed are a new roof, bid out.",
+    body: "Loose screws are maintenance. Panels that have failed are a new roof.",
   },
   {
     title: "Storm damage past a patch",

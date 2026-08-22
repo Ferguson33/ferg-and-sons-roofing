@@ -14,8 +14,8 @@ const planChoices = [
 const needs = [
   "One-time inspection / report",
   "Membership",
-  "Replacement bid",
-  "Holiday lights",
+  "New roof",
+  "Christmas lights",
   "Other",
 ] as const;
 
@@ -33,11 +33,11 @@ export function ContactForm() {
           : "Not sure";
   const defaultNeed: (typeof needs)[number] =
     needParam === "bid"
-      ? "Replacement bid"
+      ? "New roof"
       : needParam === "membership" || planParam === "essential" || planParam === "preferred"
         ? "Membership"
         : needParam === "lights"
-          ? "Holiday lights"
+          ? "Christmas lights"
           : "One-time inspection / report";
 
   const [name, setName] = useState("");

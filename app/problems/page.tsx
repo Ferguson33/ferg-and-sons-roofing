@@ -17,7 +17,7 @@ export default function ProblemsPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-steel">
         Membership covers the first list. The second list is a new roof — we’ll
-        say so in the report and bid it out.
+        say so in the report and quote the replacement.
       </p>
 
       <section className="mt-14">
@@ -63,7 +63,8 @@ export default function ProblemsPage() {
 
       <div className="mt-12 flex flex-wrap gap-3">
         <Link href="/plans" className="btn-primary">See memberships</Link>
-        <Link href="/contact" className="btn-ghost">Request an inspection</Link>
+        <Link href="/contact?need=inspection" className="btn-ghost">Request an inspection</Link>
+        <Link href="/contact?need=bid" className="btn-ghost">New roof</Link>
       </div>
     </div>
   );

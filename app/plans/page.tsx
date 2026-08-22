@@ -22,8 +22,9 @@ export default function PlansPage() {
         Inspection only, or a yearly membership.
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-steel">
-        House and attached garage. Membership repair money does not roll over
-        and is not refunded.
+        Inspection and Essential: house and attached garage. Preferred also
+        includes one additional building — a detached garage, shop, or similar.
+        Membership repair money does not roll over and is not refunded.
       </p>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -54,7 +55,7 @@ export default function PlansPage() {
           features={plans.preferred.features}
           href="/contact?plan=preferred"
           featured
-          kicker="Larger repair cap"
+          kicker="House plus one extra building"
         />
       </div>
 
@@ -81,21 +82,21 @@ export default function PlansPage() {
             <Row label="Visits" a="One" b="One a year" c="One a year" />
             <Row label="House roof" a="Yes" b="Yes" c="Yes" />
             <Row label="Attached / connected garage" a="Yes" b="Yes" c="Yes" />
-            <Row label="Detached garage, shop, or shed" a="Quoted" b="Quoted" c="Quoted" />
+            <Row label="Detached garage, shop, or similar" a="Quoted" b="Quoted" c="One included" />
             <Row label="Inspection" a="Yes" b="Yes" c="Yes" />
             <Row label="Dated report with photos" a="Yes" b="Yes" c="Yes" />
             <Row label="Small repairs" a="None" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
             <Row label="Unused repair money" a="—" b="Does not roll over" c="Does not roll over" />
             <Row label="Debris clean if the roof is safe" a="No" b="No" c="Yes" />
             <Row label="Labor after the repair cap" a="—" b="Priced before work" c="10% off that labor" />
-            <Row label="Tear-off or new roof" a="Bid separately" b="Bid separately" c="Bid separately" />
+            <Row label="Tear-off or new roof" a="Quoted separately" b="Quoted separately" c="Quoted separately" />
             <Row
               label="$199 inspection credited if we install a new roof"
               a="Yes"
               b="Yes"
               c="Yes"
             />
-            <Row label="Holiday lights" a="Quoted" b="Quoted — member credit" c="Quoted — member credit" />
+            <Row label="Christmas lights (hang + take-down)" a="Quoted" b="Member price or credit" c="Member price or credit" />
           </tbody>
         </table>
       </section>
@@ -176,17 +177,17 @@ export default function PlansPage() {
         <div className="border border-steel-light bg-white p-6 sm:p-8">
           <h2 className="text-2xl text-charcoal">If you need a new roof</h2>
           <p className="mt-3 leading-relaxed text-steel">
-            A new roof is a separate bid. If you hire us to install it, the $199
-            inspection is credited on that job. Membership repairs already done
-            are not refunded.
+            A new roof is quoted separately. We install it. If you hire us for
+            that job, the $199 inspection is credited. Membership repairs
+            already done are not refunded.
           </p>
         </div>
-        <div className="border border-steel-light bg-white p-6 sm:p-8">
-          <h2 className="text-2xl text-charcoal">Holiday lights</h2>
+        <div id="christmas-lights" className="scroll-mt-24 border border-steel-light bg-white p-6 sm:p-8">
+          <h2 className="text-2xl text-charcoal">Christmas lights</h2>
           <p className="mt-3 leading-relaxed text-steel">
-            We hang them and take them down. Extra, not in the membership. Price
+            Yearly hang and take-down. Extra, not in the membership. Price
             depends on the house and how many strands. Your lights or ours.
-            Members get a credit. Call for a quote.
+            Members get preferred pricing or a credit. Call for a quote.
           </p>
         </div>
       </section>
@@ -194,17 +195,18 @@ export default function PlansPage() {
       <section className="mt-16 border border-steel-light bg-white p-6 sm:p-8">
         <h2 className="text-3xl text-charcoal">Not in the yearly price</h2>
         <ul className="mt-4 space-y-2 text-steel">
-          <li>Detached garage, shop, or shed — quoted.</li>
+          <li>Extra buildings past what’s included — quoted. Preferred includes one additional building.</li>
           <li>A second trip.</li>
           <li>Unused repair money — no rollover, no refund.</li>
-          <li>A new roof or tear-off — separate bid. If we install it, the $199 inspection is credited.</li>
-          <li>Holiday lights — extra. Members get a credit.</li>
+          <li>A new roof or tear-off — quoted separately. If we install it, the $199 inspection is credited.</li>
+          <li>Christmas lights — extra. Yearly hang and take-down. Members get preferred pricing or a credit.</li>
         </ul>
       </section>
 
       <div className="mt-12 flex flex-wrap gap-3">
         <Link href="/contact" className="btn-primary">Request an inspection</Link>
-        <Link href="/sample-report" className="btn-ghost">See a sample report</Link>
+        <Link href="/contact?need=bid" className="btn-ghost">New roof</Link>
+        <Link href="/contact?need=lights" className="btn-ghost">Christmas lights</Link>
       </div>
     </div>
   );

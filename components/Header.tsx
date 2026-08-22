@@ -9,6 +9,7 @@ import { company, displayPhone } from "@/lib/company";
 const links = [
   { href: "/plans", label: "Memberships" },
   { href: "/problems", label: "Common problems" },
+  { href: "/plans#christmas-lights", label: "Christmas lights" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

@@ -9,17 +9,18 @@ export function Footer() {
         <div>
           <Logo invert variant="stacked" markClassName="h-14 w-14" className="items-start" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-light">
-            Yearly maintenance, one-time inspections, reports, and bids.
+            Yearly maintenance, repairs, and new roofs. Christmas lights too.
           </p>
         </div>
         <div>
           <h2 className="font-display text-sm uppercase tracking-[0.22em] text-red">Pages</h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link className="hover:text-red" href="/plans">Memberships</Link></li>
+            <li><Link className="hover:text-red" href="/contact?need=inspection">Repairs &amp; inspections</Link></li>
+            <li><Link className="hover:text-red" href="/contact?need=bid">New roofs</Link></li>
+            <li><Link className="hover:text-red" href="/plans#christmas-lights">Christmas lights</Link></li>
             <li><Link className="hover:text-red" href="/problems">Common problems</Link></li>
             <li><Link className="hover:text-red" href="/about">About</Link></li>
-            <li><Link className="hover:text-red" href="/contact?need=inspection">Inspection / report</Link></li>
-            <li><Link className="hover:text-red" href="/contact?need=bid">Get a bid</Link></li>
             <li><Link className="hover:text-red" href="/sample-report">Sample roof report</Link></li>
           </ul>
         </div>

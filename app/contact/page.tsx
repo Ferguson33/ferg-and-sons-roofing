@@ -15,8 +15,8 @@ export default function ContactPage() {
         <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Contact</p>
         <h1 className="mt-3 text-5xl text-charcoal">How can we help.</h1>
         <p className="mt-4 max-w-xl text-lg text-steel">
-          One-time inspection and report, yearly membership, or a replacement
-          bid. Name, phone, and address. We’ll call back.
+          Yearly membership, repairs and inspections, a new roof, or Christmas
+          lights. Name, phone, and address. We’ll call back.
         </p>
         <div className="mt-10 rounded-sm border border-steel-light bg-white p-6 sm:p-8">
           <Suspense fallback={<p className="text-steel">Loading…</p>}>
