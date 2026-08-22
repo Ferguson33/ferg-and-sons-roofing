@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roof report — {{DOC_NUMBER}} — Ferg and Sons Roofing, LLC</title>
+  <link rel="stylesheet" href="print.css" />
+</head>
+<body>
+  <div class="sheet">
+    <header class="letterhead">
+      <div>
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="4" y="4" width="56" height="56" rx="8" fill="#1F2124"/>
+          <path d="M10 38 L32 16 L54 38 L48 38 L32 23 L16 38 Z" fill="#C44536"/>
+          <rect x="22" y="38" width="20" height="14" fill="#8B939C"/>
+          <circle cx="32" cy="45" r="2.2" fill="#1F2124"/>
+        </svg>
+        <p class="brand display">Ferg and Sons</p>
+        <p class="brand-sub display">Roofing, LLC</p>
+        <p class="meta">PO Box 103, Big Piney, WY 83113<br>Josh Ferguson · (307) 231-6026<br>josh.fergusonsublette@gmail.com</p>
+      </div>
+      <div class="doc-title">
+        <h1>Roof report</h1>
+        <p><strong>{{DOC_NUMBER}}</strong></p>
+        <p class="meta">{{DATE}}</p>
+      </div>
+    </header>
+
+    <div class="grid-2">
+      <div>
+        <p class="kicker display">Property / owner</p>
+        <p><strong>{{OWNER_NAME}}</strong><br>{{PHONE}}<br>{{EMAIL}}<br>{{ADDRESS}}</p>
+      </div>
+      <div>
+        <p class="kicker display">Roof</p>
+        <p>Type: {{ROOF_TYPE}}<br>Age: {{ROOF_AGE}} · Pitch: {{PITCH}} · Layers: {{LAYERS}}</p>
+        <p><strong>{{CONDITION}}</strong></p>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Finding</th>
+          <th>Severity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{FINDINGS_ROWS}}
+      </tbody>
+    </table>
+
+    <p class="kicker display" style="margin-top:1.25rem">Recommended work</p>
+    <p>{{RECOMMENDED}}</p>
+
+    <p class="kicker display" style="margin-top:1rem">Notes</p>
+    <p>{{NOTES}}</p>
+
+    <div class="photos">
+      {{PHOTOS}}
+    </div>
+
+    <p class="fine">This report documents condition on the date of inspection. It is not a warranty. Make checks payable to Ferg and Sons Roofing, LLC.</p>
+  </div>
+</body>
+</html>

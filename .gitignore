@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local grok skills (also in ~/.grok)
+.grok/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

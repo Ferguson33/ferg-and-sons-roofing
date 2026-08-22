@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Invoice — {{DOC_NUMBER}} — Ferg and Sons Roofing, LLC</title>
+  <link rel="stylesheet" href="print.css" />
+</head>
+<body>
+  <div class="sheet">
+    <header class="letterhead">
+      <div>
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect x="4" y="4" width="56" height="56" rx="8" fill="#1F2124"/>
+          <path d="M10 38 L32 16 L54 38 L48 38 L32 23 L16 38 Z" fill="#C44536"/>
+          <rect x="22" y="38" width="20" height="14" fill="#8B939C"/>
+          <circle cx="32" cy="45" r="2.2" fill="#1F2124"/>
+        </svg>
+        <p class="brand display">Ferg and Sons</p>
+        <p class="brand-sub display">Roofing, LLC</p>
+        <p class="meta">PO Box 103, Big Piney, WY 83113<br>Josh Ferguson · (307) 231-6026<br>josh.fergusonsublette@gmail.com</p>
+      </div>
+      <div class="doc-title">
+        <h1>Invoice</h1>
+        <p><strong>{{DOC_NUMBER}}</strong></p>
+        <p class="meta">{{DATE}}<br>{{JOB_KIND}}</p>
+      </div>
+    </header>
+
+    <div class="grid-2">
+      <div>
+        <p class="kicker display">Bill to</p>
+        <p><strong>{{OWNER_NAME}}</strong><br>{{PHONE}}<br>{{EMAIL}}<br>{{ADDRESS}}</p>
+      </div>
+      <div>
+        <p class="kicker display">Job</p>
+        <p><strong>{{PROJECT_TITLE}}</strong><br>{{DESCRIPTION}}</p>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="num">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ITEMS_ROWS}}
+      </tbody>
+    </table>
+
+    <div class="totals">
+      <div><span>Subtotal</span><span>{{SUBTOTAL}}</span></div>
+      <div><span>Member credit</span><span>{{MEMBER_CREDIT}}</span></div>
+      <div><span>Tax</span><span>{{TAX}}</span></div>
+      <div class="strong"><span>Total</span><span>{{TOTAL}}</span></div>
+      <div><span>Paid</span><span>{{PAID}}</span></div>
+      <div class="strong"><span>Balance due</span><span>{{BALANCE}}</span></div>
+    </div>
+
+    <p class="kicker display" style="margin-top:1.25rem">Notes</p>
+    <p>{{NOTES}}</p>
+    <p class="kicker display">Terms</p>
+    <p>{{TERMS}}</p>
+    <p class="fine">Make checks payable to Ferg and Sons Roofing, LLC</p>
+  </div>
+</body>
+</html>

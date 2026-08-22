@@ -1,69 +1,188 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { company, displayPhone, money, plans } from "@/lib/company";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <section className="bg-charcoal text-white">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
+          <div>
+            <p className="font-display text-xs uppercase tracking-[0.32em] text-red">
+              {company.legalName} · {company.serviceArea}
+            </p>
+            <h1 className="mt-4 text-4xl leading-[1.05] sm:text-6xl">
+              Maintenance, inspections, and new roofs.
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel-light">
+              One-time inspections, reports, and bids too.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/plans" className="btn-primary">
+                Memberships
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/contact?need=inspection" className="btn-ghost bg-transparent text-white border-white/25">
+                Inspection / report
+              </Link>
+              <Link href="/contact?need=bid" className="btn-ghost bg-transparent text-white border-white/25">
+                Get a bid
+              </Link>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/images/winter.jpg"
+              alt="Snow on residential roofs in the mountains"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="border-y border-steel-light bg-white">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3 sm:px-6">
+          <Step n="1" title="Inspect and repair" body="One visit. Small work gets done while we’re there." />
+          <Step n="2" title="Stop leaks early" body="Failed caulk, loose screws, a few shingles." />
+          <Step n="3" title="You get a report" body="Photos and findings. Bigger jobs are bid out." />
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Memberships</p>
+              <h2 className="mt-3 text-4xl text-charcoal">Inspection, or a yearly membership.</h2>
+            </div>
+            <Link href="/plans" className="text-sm font-medium text-red">
+              Full details →
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <HomeMembership
+              name={plans.inspection.name}
+              price={plans.inspection.price}
+              per={plans.inspection.per}
+              line="Inspection and report. No repairs. $199 credited if we install a new roof."
+              featured={false}
+            />
+            <HomeMembership
+              name={plans.essential.name}
+              price={plans.essential.price}
+              per={plans.essential.per}
+              line={`Inspection, report, and up to ${money(plans.essential.allowance)} in repairs.`}
+              featured={false}
+            />
+            <HomeMembership
+              name={plans.preferred.name}
+              price={plans.preferred.price}
+              per={plans.preferred.per}
+              line={`Inspection, report, and up to ${money(plans.preferred.allowance)} in repairs.`}
+              featured
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p className="font-display text-xs uppercase tracking-[0.28em] text-red">The report</p>
+          <h2 className="mt-3 text-4xl text-charcoal">A Professional Roof Report.</h2>
+          <p className="mt-4 text-lg leading-relaxed text-steel">
+            After the visit you keep dated photos and findings: satisfactory,
+            maintenance required, monitor, or replacement recommended.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link href="/plans" className="inline-flex items-center gap-2 font-medium text-red">
+              What’s in a membership <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/problems" className="inline-flex items-center gap-2 font-medium text-red">
+              Common problems <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+          <Image
+            src="/images/hero.jpg"
+            alt="Ranch house with a roof on sagebrush ground"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Job photos</p>
+        <h2 className="mt-3 text-3xl text-charcoal">Job photos will go here.</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="placeholder-frame">Completed work</div>
+          <div className="placeholder-frame">Before and after</div>
+        </div>
+      </section>
+
+      <section className="bg-charcoal text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+          <div>
+            <h2 className="text-3xl">Need the roof looked at?</h2>
+            <p className="mt-2 text-steel-light">
+              {company.owner} · {displayPhone()} · {company.serviceArea}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/contact?need=inspection" className="btn-primary">Request an inspection</Link>
+            <Link href="/plans" className="btn-ghost bg-transparent text-white border-white/25">
+              See memberships
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function Step({ n, title, body }: { n: string; title: string; body: string }) {
+  return (
+    <div>
+      <p className="font-display text-xs uppercase tracking-[0.22em] text-red">{n}</p>
+      <h2 className="mt-2 text-xl text-charcoal">{title}</h2>
+      <p className="mt-1 text-sm leading-relaxed text-steel">{body}</p>
     </div>
+  );
+}
+
+function HomeMembership({
+  name,
+  price,
+  per,
+  line,
+  featured,
+}: {
+  name: string;
+  price: number;
+  per: string;
+  line: string;
+  featured: boolean;
+}) {
+  return (
+    <Link
+      href="/plans"
+      className={`block rounded-sm border p-6 transition-colors hover:border-red ${
+        featured ? "border-red bg-paper" : "border-steel-light"
+      }`}
+    >
+      <p className="font-display text-xs uppercase tracking-[0.22em] text-red">{name}</p>
+      <p className="mt-2 font-display text-5xl text-charcoal">
+        {money(price)}
+        <span className="text-lg text-steel"> / {per}</span>
+      </p>
+      <p className="mt-3 text-sm text-steel">{line}</p>
+      <p className="mt-6 text-sm font-medium text-red">See what’s included →</p>
+    </Link>
   );
 }
