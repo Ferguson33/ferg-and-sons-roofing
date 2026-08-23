@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="mt-auto bg-charcoal-deep text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <Logo invert variant="stacked" markClassName="h-14 w-14" className="items-start" />
+          <Logo className="h-20 w-auto rounded-sm bg-white" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-light">
             Yearly maintenance, repairs, and new roofs. Christmas lights too.
           </p>

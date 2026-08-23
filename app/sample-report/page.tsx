@@ -46,7 +46,7 @@ export default function SampleReportPage() {
         <article className="paper">
           <header className="flex items-start justify-between gap-6 border-b-2 border-charcoal pb-5">
             <div>
-              <Logo markClassName="h-12 w-12" />
+              <Logo className="h-16 w-auto" />
               <p className="mt-3 text-xs leading-relaxed text-steel">
                 {mailingLine}
                 <br />

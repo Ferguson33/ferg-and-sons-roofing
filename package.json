@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "brand": "node scripts/build-brand.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.33.0",

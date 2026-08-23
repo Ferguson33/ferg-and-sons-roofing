@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Oswald, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { PwaRegister } from "@/components/PwaRegister";
 import { company } from "@/lib/company";
 import "./globals.css";
 
@@ -25,19 +26,34 @@ export const metadata: Metadata = {
     template: `%s · ${company.shortName}`,
   },
   description: `${company.legalName}. Yearly memberships, roof repairs and inspections, and new roofs in ${company.serviceArea}.`,
+  applicationName: "Ferg & Sons",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Ferg & Sons",
+  },
+  icons: {
+    icon: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     title: company.legalName,
     description: company.tagline,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/images/fasteners.jpg" }],
+    images: [{ url: "/brand/logo.png" }],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1f2124",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${oswald.variable} ${source.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
+        <PwaRegister />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
