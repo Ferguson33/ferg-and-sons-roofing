@@ -66,7 +66,7 @@ export function ContactForm() {
   }, [name, phone, email, address, roof, plan, need, message]);
 
   const mailto = `mailto:${company.email}?subject=${encodeURIComponent(
-    `Inspection request — ${name || "property"}`
+    `${company.legalName} — ${need}`
   )}&body=${encodeURIComponent(body)}`;
 
   function requireBasics() {
@@ -145,7 +145,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-wrap gap-3">
         <button type="submit" className="btn-primary">
-          Request an inspection
+          Send request
         </button>
         <button type="button" className="btn-ghost" onClick={onCopy}>
           Copy to send later

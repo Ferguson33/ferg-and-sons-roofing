@@ -22,15 +22,15 @@ const source = Source_Sans_3({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ferg-and-sons-roofing.vercel.app"),
   title: {
-    default: `${company.legalName} · Maintenance, repairs, and new roofs`,
-    template: `%s · ${company.shortName}`,
+    default: `${company.legalName} · Inspections, repairs, and new roofs`,
+    template: `%s · ${company.legalName}`,
   },
   description: `${company.legalName}. Yearly memberships, roof repairs and inspections, and new roofs in ${company.serviceArea}.`,
-  applicationName: "Ferg & Sons",
+  applicationName: company.legalName,
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Ferg & Sons",
+    title: company.legalName,
   },
   icons: {
     icon: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }],

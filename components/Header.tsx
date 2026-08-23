@@ -20,7 +20,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-steel-light/80 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" aria-label={`${company.shortName} home`} onClick={() => setOpen(false)}>
+        <Link href="/" aria-label={`${company.legalName} home`} onClick={() => setOpen(false)}>
           <Logo className="h-12 w-auto sm:h-14" priority />
         </Link>
 

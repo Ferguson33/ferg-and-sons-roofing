@@ -16,14 +16,15 @@ export default function ProblemsPage() {
         Some of this is maintenance. Some of it is a new roof.
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-steel">
-        Membership covers the first list. The second list is a new roof — we’ll
-        say so in the report and quote the replacement.
+        Membership covers the first list. The second list means the roof needs
+        to be replaced. We will say so in the report and quote the new roof.
       </p>
 
       <section className="mt-14">
         <h2 className="text-3xl text-charcoal">Addressed with maintenance</h2>
         <p className="mt-3 max-w-2xl text-steel">
-          These shorten a roof if they sit. A yearly visit is meant to catch them.
+          Left alone, these get worse and the roof wears out faster. A yearly
+          visit is to catch them.
         </p>
         <ul className="mt-8 grid gap-6 lg:grid-cols-2">
           {maintenanceIssues.map((item) => (

@@ -143,9 +143,9 @@ export default function SampleReportPage() {
               Recommended work
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-steel">
-              Maintenance required: reseal the west pipe boot; snug or replace
-              backed-out garage fasteners. Monitor the north eave through next
-              winter. No replacement recommended on this date.
+              Maintenance required: reseal the west pipe boot; tighten or
+              replace backed-out garage fasteners. Monitor the north eave
+              through next winter. No replacement recommended on this date.
             </p>
           </section>
 

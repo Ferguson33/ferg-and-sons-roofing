@@ -13,10 +13,10 @@ export default function HomePage() {
               {company.legalName} · {company.serviceArea}
             </p>
             <h1 className="mt-4 text-4xl leading-[1.05] sm:text-6xl">
-              Yearly maintenance, repairs, and new roofs.
+              Inspections, repairs, and new roofs.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel-light">
-              We inspect. We repair. We put a new roof on when it’s time.
+              Yearly memberships too. {company.serviceArea}.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/plans" className="btn-primary">
@@ -24,7 +24,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/contact?need=inspection" className="btn-ghost bg-transparent text-white border-white/25">
-                Repairs &amp; inspections
+                Inspections
               </Link>
               <Link href="/contact?need=bid" className="btn-ghost bg-transparent text-white border-white/25">
                 New roofs
@@ -32,7 +32,7 @@ export default function HomePage() {
             </div>
             <p className="mt-5">
               <Link href="#christmas-lights" className="text-sm text-steel-light hover:text-white">
-                Christmas lights — yearly hang and take-down →
+                Christmas lights — hang and take-down →
               </Link>
             </p>
           </div>
@@ -53,33 +53,33 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <p className="font-display text-xs uppercase tracking-[0.28em] text-red">What we do</p>
           <h2 className="mt-3 max-w-3xl text-4xl text-charcoal">
-            Three things, same company.
+            Memberships, inspections, and new roofs.
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <ServiceCard
               image="/images/fasteners.jpg"
               alt="Metal roof fasteners"
-              kicker="Yearly maintenance"
+              kicker="One visit a year"
               title="Memberships"
-              body={`One visit a year. Inspection, report, and labor and materials that fit the cap. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)} — house, attached garage, and one extra building.`}
+              body={`One visit a year. We inspect the roof, leave a written report, and do small repairs up to the amount in the plan. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
               href="/plans"
               cta="See memberships"
             />
             <ServiceCard
               image="/images/ridge.jpg"
               alt="Ridge on an asphalt shingle roof"
-              kicker="Repairs & inspections"
-              title="Look at it. Fix what’s small."
-              body={`One-time inspection and Professional Roof Report, ${money(plans.inspection.price)}. No work on that visit. Memberships include small repairs the same day.`}
+              kicker={`${money(plans.inspection.price)} inspection`}
+              title="Inspections and repairs"
+              body={`The ${money(plans.inspection.price)} inspection: we look at the roof and leave a written report. We do not repair anything on that visit. Small repairs are done on a yearly membership visit, up to the plan amount.`}
               href="/contact?need=inspection"
               cta="Request an inspection"
             />
             <ServiceCard
               image="/images/hero.jpg"
               alt="Ranch house with a roof on sagebrush ground"
-              kicker="New roofs"
-              title="When the roof is done."
-              body={`We quote the replacement and we install it. ${money(plans.inspection.price)} inspection credited if you hire us for the new roof.`}
+              kicker="Replacement"
+              title="New roofs"
+              body={`If the roof needs to be replaced, we quote the job and we install it. Hire us for the new roof and the ${money(plans.inspection.price)} inspection comes off that price.`}
               href="/contact?need=bid"
               cta="Ask about a new roof"
             />
@@ -90,12 +90,12 @@ export default function HomePage() {
       <section id="christmas-lights" className="scroll-mt-24 border-y border-steel-light bg-paper">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div className="max-w-2xl">
-            <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Extra, not a membership</p>
+            <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Not part of a membership</p>
             <h2 className="mt-2 text-3xl text-charcoal">Christmas lights</h2>
             <p className="mt-3 leading-relaxed text-steel">
-              Yearly hang and take-down. Quoted by the house and how many
-              strands. Your lights or ours. Members get preferred pricing or a
-              credit.
+              We hang them and take them down each year. Price depends on the
+              house and how many strands. Your lights or ours. Members get
+              preferred pricing or a credit.
             </p>
           </div>
           <Link href="/contact?need=lights" className="btn-ghost shrink-0">
@@ -107,10 +107,10 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="font-display text-xs uppercase tracking-[0.28em] text-red">The report</p>
-          <h2 className="mt-3 text-4xl text-charcoal">A Professional Roof Report.</h2>
+          <h2 className="mt-3 text-4xl text-charcoal">A written roof report after every inspection.</h2>
           <p className="mt-4 text-lg leading-relaxed text-steel">
-            After the visit you keep dated photos and findings: satisfactory,
-            maintenance required, monitor, or replacement recommended.
+            You keep dated photos and findings. Each item is marked
+            satisfactory, needs maintenance, monitor, or replace.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Link href="/sample-report" className="inline-flex items-center gap-2 font-medium text-red">
@@ -134,7 +134,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Job photos</p>
-        <h2 className="mt-3 text-3xl text-charcoal">Job photos will go here.</h2>
+        <h2 className="mt-3 text-3xl text-charcoal">Photos from finished jobs will go here.</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="placeholder-frame">Completed work</div>
           <div className="placeholder-frame">Before and after</div>
@@ -144,7 +144,7 @@ export default function HomePage() {
       <section className="bg-charcoal text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div>
-            <h2 className="text-3xl">Need the roof looked at — or a new one?</h2>
+            <h2 className="text-3xl">Call for an inspection, a membership, or a new roof.</h2>
             <p className="mt-2 text-steel-light">
               {company.owner} · {displayPhone()} · {company.serviceArea}
             </p>

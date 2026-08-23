@@ -9,14 +9,14 @@ export function Footer() {
         <div>
           <Logo className="h-20 w-auto rounded-sm bg-white" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-light">
-            Yearly maintenance, repairs, and new roofs. Christmas lights too.
+            Inspections, repairs, and new roofs. Christmas lights too.
           </p>
         </div>
         <div>
           <h2 className="font-display text-sm uppercase tracking-[0.22em] text-red">Pages</h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link className="hover:text-red" href="/plans">Memberships</Link></li>
-            <li><Link className="hover:text-red" href="/contact?need=inspection">Repairs &amp; inspections</Link></li>
+            <li><Link className="hover:text-red" href="/contact?need=inspection">Inspections</Link></li>
             <li><Link className="hover:text-red" href="/contact?need=bid">New roofs</Link></li>
             <li><Link className="hover:text-red" href="/plans#christmas-lights">Christmas lights</Link></li>
             <li><Link className="hover:text-red" href="/problems">Common problems</Link></li>

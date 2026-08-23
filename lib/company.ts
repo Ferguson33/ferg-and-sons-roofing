@@ -1,7 +1,7 @@
 export const company = {
-  legalName: "Ferg and Sons Roofing, LLC",
-  shortName: "Ferg and Sons Roofing",
-  tagline: "Yearly maintenance, repairs, and new roofs in Sublette County.",
+  legalName: "Ferg & Sons Roofing, LLC",
+  shortName: "Ferg & Sons Roofing",
+  tagline: "Inspections, repairs, and new roofs in Sublette County.",
   email: "josh.fergusonsublette@gmail.com",
   phone: "307-231-6026",
   tel: "+13072316026",
@@ -25,13 +25,13 @@ export const plans = {
     price: 99,
     allowance: 0,
     per: "visit",
-    blurb: "One visit. House and attached garage. Inspection and Professional Roof Report. No work. If you hire us for a new roof, the $99 inspection is credited.",
+    blurb: "One visit. House and attached garage. We inspect the roof and leave a written report with photos. No repairs on this visit. If you hire us for a new roof, the $99 comes off that job.",
     features: [
       "One visit",
       "House roof plus attached garage",
-      "Full inspection and dated report with photos",
-      "No work completed",
-      "$99 inspection credited if we install a new roof",
+      "Inspection and dated report with photos",
+      "No repairs on this visit",
+      "If we install a new roof, the $99 comes off that job",
     ],
   },
   essential: {
@@ -40,13 +40,13 @@ export const plans = {
     price: 199,
     allowance: 100,
     per: "year",
-    blurb: "One visit a year. House and attached garage. Inspection, report, and up to $100 in labor and materials that day.",
+    blurb: "One visit a year. House and attached garage. Inspection, written report, and up to $100 in labor and materials that day.",
     features: [
       "One visit per year",
       "House roof plus attached garage",
-      "Full inspection and dated report with photos",
+      "Inspection and dated report with photos",
       "Up to $100 in labor and materials on that visit",
-      "$99 inspection credited if we install a new roof",
+      "If we install a new roof, the $99 inspection comes off that job",
     ],
   },
   preferred: {
@@ -55,14 +55,14 @@ export const plans = {
     price: 299,
     allowance: 200,
     per: "year",
-    blurb: "Same visit and report. House, attached garage, and one extra building. Up to $200 in labor and materials, debris clean if the roof is safe, and 10% off extra labor after that.",
+    blurb: "One visit a year. House, attached garage, and one extra building. Inspection, written report, up to $200 in labor and materials, debris clean if the roof is safe, and 10% off extra labor after that.",
     features: [
       "Everything in Essential",
       "House, attached garage, plus one additional building (detached garage, shop, or similar)",
       "Up to $200 in labor and materials on that visit",
-      "Spring clean / debris off if the roof is safe that day",
+      "Debris clean if the roof is safe that day",
       "10% off extra labor after the $200",
-      "$99 inspection credited if we install a new roof",
+      "If we install a new roof, the $99 inspection comes off that job",
     ],
   },
 } as const;
@@ -74,7 +74,7 @@ export const reportSections = [
   },
   {
     title: "Maintenance required",
-    body: "Repairs this visit, under the allowance if they fit.",
+    body: "Needs repair on this visit, if it fits the included amount.",
   },
   {
     title: "Monitor",
@@ -82,7 +82,7 @@ export const reportSections = [
   },
   {
     title: "Replacement recommended",
-    body: "Beyond maintenance. We quote the replacement and we install it.",
+    body: "The roof needs to be replaced. We quote it and we install it.",
   },
 ] as const;
 
@@ -93,7 +93,7 @@ export const basicRepairs = [
   },
   {
     title: "Tightening and replacing loose fasteners on metal roofs",
-    note: "Wind backs screws out. They get snugged down or replaced.",
+    note: "Wind backs screws out. They get tightened or replaced.",
   },
   {
     title: "Replacing a few pipe-jack or flashing screws",
@@ -140,7 +140,7 @@ export const maintenanceIssues = [
   },
   {
     title: "Loose pipe-jack or flashing screws",
-    body: "Screws around penetrations work out the same way metal-roof fasteners do. They get snugged or replaced on the visit.",
+    body: "Screws around pipes and flashing work out the same way metal-roof fasteners do. They get tightened or replaced on the visit.",
   },
   {
     title: "Debris in valleys and at the eaves",
@@ -152,7 +152,7 @@ export const maintenanceIssues = [
   },
   {
     title: "Early ice at the eaves",
-    body: "Ice dams are a weather problem, but plugged drainage and weak spots at the eave make them worse. Maintenance will not heat the attic; it will catch the roof damage they cause.",
+    body: "Ice dams come from weather. Clogged drainage and weak spots at the eave make them worse. We cannot heat the attic. We can catch the damage ice does to the roof.",
   },
 ] as const;
 
@@ -183,7 +183,7 @@ export const replacementIssues = [
   },
   {
     title: "The roof is at the end of its service life",
-    body: "Age plus condition. The report will say so instead of selling another year of repairs on a roof that should come off.",
+    body: "Age plus condition. The report will say so. We will not sell another year of repairs on a roof that should come off.",
   },
 ] as const;
 

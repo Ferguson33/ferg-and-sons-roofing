@@ -1,4 +1,4 @@
-# Ferg and Sons Roofing, LLC
+# Ferg & Sons Roofing, LLC
 
 Public site only: marketing pages and `/sample-report`.
 
