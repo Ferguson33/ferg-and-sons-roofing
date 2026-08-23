@@ -61,7 +61,7 @@ export default function HomePage() {
               alt="Metal roof fasteners"
               kicker="Yearly maintenance"
               title="Memberships"
-              body={`One visit a year. Inspection, report, and small repairs that fit the cap. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)} — house, attached garage, and one extra building.`}
+              body={`One visit a year. Inspection, report, and labor and materials that fit the cap. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)} — house, attached garage, and one extra building.`}
               href="/plans"
               cta="See memberships"
             />

@@ -85,13 +85,13 @@ export default function PlansPage() {
             <Row label="Detached garage, shop, or similar" a="Quoted" b="Quoted" c="One included" />
             <Row label="Inspection" a="Yes" b="Yes" c="Yes" />
             <Row label="Dated report with photos" a="Yes" b="Yes" c="Yes" />
-            <Row label="Small repairs" a="None" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
+            <Row label="Labor and materials" a="None" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
             <Row label="Unused repair money" a="—" b="Does not roll over" c="Does not roll over" />
             <Row label="Debris clean if the roof is safe" a="No" b="No" c="Yes" />
             <Row label="Labor after the repair cap" a="—" b="Priced before work" c="10% off that labor" />
             <Row label="Tear-off or new roof" a="Quoted separately" b="Quoted separately" c="Quoted separately" />
             <Row
-              label="$199 inspection credited if we install a new roof"
+              label={`$${plans.inspection.price} inspection credited if we install a new roof`}
               a="Yes"
               b="Yes"
               c="Yes"
@@ -105,7 +105,7 @@ export default function PlansPage() {
         <h2 className="text-3xl text-charcoal">The visit</h2>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-steel">
           One trip, weather allowing. Inspection is look-and-report only — no
-          repairs. Essential and Preferred include small repairs that fit the
+          work. Essential and Preferred include labor and materials that fit the
           cap. Preferred adds a debris clean that same day if the roof is safe.
         </p>
       </section>
@@ -156,10 +156,10 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">Small repairs on that visit</h2>
         <p className="mt-3 max-w-2xl text-steel">
-          Inspection includes none. Essential up to {money(plans.essential.allowance)}.
-          Preferred up to {money(plans.preferred.allowance)}. Past the cap, we
-          price it first. Preferred is 10% off that extra labor. Cap is for that
-          visit only.
+          Inspection includes none. Essential up to {money(plans.essential.allowance)}
+          in labor and materials. Preferred up to {money(plans.preferred.allowance)}.
+          Past the cap, we price it first. Preferred is 10% off that extra labor.
+          Cap is for that visit only.
         </p>
         <ol className="mt-8 space-y-4">
           {basicRepairs.map((item, i) => (
@@ -178,8 +178,8 @@ export default function PlansPage() {
           <h2 className="text-2xl text-charcoal">If you need a new roof</h2>
           <p className="mt-3 leading-relaxed text-steel">
             A new roof is quoted separately. We install it. If you hire us for
-            that job, the $199 inspection is credited. Membership repairs
-            already done are not refunded.
+            that job, the {money(plans.inspection.price)} inspection is credited.
+            Membership work already done is not refunded.
           </p>
         </div>
         <div id="christmas-lights" className="scroll-mt-24 border border-steel-light bg-white p-6 sm:p-8">
@@ -198,7 +198,7 @@ export default function PlansPage() {
           <li>Extra buildings past what’s included — quoted. Preferred includes one additional building.</li>
           <li>A second trip.</li>
           <li>Unused repair money — no rollover, no refund.</li>
-          <li>A new roof or tear-off — quoted separately. If we install it, the $199 inspection is credited.</li>
+          <li>A new roof or tear-off — quoted separately. If we install it, the {money(plans.inspection.price)} inspection is credited.</li>
           <li>Christmas lights — extra. Yearly hang and take-down. Members get preferred pricing or a credit.</li>
         </ul>
       </section>
