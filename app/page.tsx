@@ -9,10 +9,10 @@ export default function HomePage() {
       <section className="bg-charcoal text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
-            <p className="font-display text-xs uppercase tracking-[0.32em] text-red">
+            <p className="font-display text-xl font-bold uppercase tracking-[0.12em] text-white sm:text-2xl">
               {company.legalName}
             </p>
-            <p className="mt-2 text-sm text-steel-light">
+            <p className="mt-2 text-sm text-steel-light sm:text-base">
               {company.serviceArea}
             </p>
             <h1 className="mt-6 text-4xl leading-[1.1] sm:text-6xl">
