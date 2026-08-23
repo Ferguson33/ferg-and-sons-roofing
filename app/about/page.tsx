@@ -5,7 +5,7 @@ import { company, displayPhone } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Josh Ferguson, ${company.legalName}. Thirteen years in Sublette County. Roofing here, in Florida, and in Michigan.`,
+  description: `${company.legalName}. 20+ years of roofing experience. Inspections, repairs, and new roofs in ${company.serviceArea}.`,
 };
 
 export default function AboutPage() {
@@ -13,15 +13,11 @@ export default function AboutPage() {
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <p className="font-display text-xs uppercase tracking-[0.28em] text-red">About</p>
       <h1 className="mt-3 max-w-3xl text-5xl text-charcoal">
-        Thirteen years in Sublette County.
+        20+ years of roofing experience.
       </h1>
 
       <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-start">
         <div className="space-y-5 text-lg leading-relaxed text-steel">
-          <p>
-            Josh Ferguson has lived here 13 years. He has also roofed in Florida
-            and Michigan, alongside other full-time work.
-          </p>
           <p>
             {company.legalName} does inspections, small repairs, yearly
             memberships, and new roofs. We inspect, do the small work, and leave

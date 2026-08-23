@@ -59,9 +59,9 @@ export default function HomePage() {
             <ServiceCard
               image="/images/fasteners.jpg"
               alt="Metal roof fasteners"
-              kicker="One visit a year"
+              kicker="Yearly"
               title="Memberships"
-              body={`One visit a year. We inspect the roof, leave a written report, and do small repairs up to the amount in the plan. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
+              body={`Each year we inspect the roof, leave a written report, and do small repairs up to the amount in the plan. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
               href="/plans"
               cta="See memberships"
             />

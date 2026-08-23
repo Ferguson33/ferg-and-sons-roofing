@@ -79,7 +79,6 @@ export default function PlansPage() {
             </tr>
           </thead>
           <tbody className="text-charcoal">
-            <Row label="Visits" a="One" b="One a year" c="One a year" />
             <Row label="House roof" a="Yes" b="Yes" c="Yes" />
             <Row label="Attached / connected garage" a="Yes" b="Yes" c="Yes" />
             <Row label="Detached garage, shop, or similar" a="Quoted" b="Quoted" c="One included" />
@@ -104,10 +103,9 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">The visit</h2>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-steel">
-          One trip, weather allowing. Inspection is look-and-report only. We do
-          not repair anything on that visit. Essential and Preferred include
-          labor and materials up to the plan amount. Preferred adds a debris
-          clean that same day if the roof is safe.
+          Inspection is look-and-report only. We do not repair anything on that
+          visit. Essential and Preferred include labor and materials up to the
+          plan amount. Preferred adds a debris clean if the roof is safe.
         </p>
       </section>
 
@@ -156,12 +154,12 @@ export default function PlansPage() {
       </section>
 
       <section className="mt-16">
-        <h2 className="text-3xl text-charcoal">Small repairs on that visit</h2>
+        <h2 className="text-3xl text-charcoal">Small repairs included</h2>
         <p className="mt-3 max-w-2xl text-steel">
           Inspection includes none. Essential up to {money(plans.essential.allowance)}
           in labor and materials. Preferred up to {money(plans.preferred.allowance)}.
           Past that amount, we price the extra work first. Preferred is 10% off
-          that extra labor. The included amount is for that visit only.
+          that extra labor. Unused amount does not roll over.
         </p>
         <ol className="mt-8 space-y-4">
           {basicRepairs.map((item, i) => (
@@ -198,7 +196,6 @@ export default function PlansPage() {
         <h2 className="text-3xl text-charcoal">Not in the yearly price</h2>
         <ul className="mt-4 space-y-2 text-steel">
           <li>Extra buildings past what’s included — quoted. Preferred includes one additional building.</li>
-          <li>A second trip.</li>
           <li>Unused repair money — no rollover, no refund.</li>
           <li>A new roof or tear-off — quoted separately. If we install it, the {money(plans.inspection.price)} inspection comes off that job.</li>
           <li>Christmas lights — extra. Yearly hang and take-down. Members get preferred pricing or a credit.</li>
