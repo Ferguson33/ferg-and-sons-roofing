@@ -10,13 +10,18 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
             <p className="font-display text-xs uppercase tracking-[0.32em] text-red">
-              {company.legalName} · {company.serviceArea}
+              {company.legalName}
             </p>
-            <h1 className="mt-4 text-4xl leading-[1.05] sm:text-6xl">
-              Inspections, repairs, and new roofs.
+            <p className="mt-2 text-sm text-steel-light">
+              {company.serviceArea}
+            </p>
+            <h1 className="mt-6 text-4xl leading-[1.1] sm:text-6xl">
+              <span className="block">Inspections</span>
+              <span className="block">Repairs</span>
+              <span className="block">New roofs</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel-light">
-              Yearly memberships too. {company.serviceArea}.
+              Yearly memberships too.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/plans" className="btn-primary">
