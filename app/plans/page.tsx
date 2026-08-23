@@ -156,10 +156,10 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">Small repairs included</h2>
         <p className="mt-3 max-w-2xl text-steel">
-          Inspection includes none. Essential up to {money(plans.essential.allowance)}
-          in labor and materials. Preferred up to {money(plans.preferred.allowance)}.
-          Past that amount, we price the extra work first. Preferred is 10% off
-          that extra labor. Unused amount does not roll over.
+          Inspection includes none. Essential up to {money(plans.essential.allowance)}{" "}
+          in labor and materials. Preferred up to {money(plans.preferred.allowance)}{" "}
+          in labor and materials. Past that amount, we price the extra work first.
+          Preferred is 10% off that extra labor. Unused amount does not roll over.
         </p>
         <ol className="mt-8 space-y-4">
           {basicRepairs.map((item, i) => (

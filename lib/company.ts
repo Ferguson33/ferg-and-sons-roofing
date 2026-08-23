@@ -177,7 +177,7 @@ export const replacementIssues = [
   },
   {
     title: "Storm damage past a patch",
-    body: "A few shingles is maintenance. Whole slopes or broken structure is replacement work.",
+    body: "A few shingles are maintenance. Whole slopes or broken structure is replacement work.",
   },
   {
     title: "The roof is at the end of its service life",

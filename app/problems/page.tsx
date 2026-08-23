@@ -24,7 +24,7 @@ export default function ProblemsPage() {
         <h2 className="text-3xl text-charcoal">Addressed with maintenance</h2>
         <p className="mt-3 max-w-2xl text-steel">
           Left alone, these get worse and the roof wears out faster. A yearly
-          visit is to catch them.
+          visit catches them.
         </p>
         <ul className="mt-8 grid gap-6 lg:grid-cols-2">
           {maintenanceIssues.map((item) => (
