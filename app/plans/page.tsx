@@ -16,18 +16,18 @@ export const metadata: Metadata = {
 
 export default function PlansPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div className="mx-auto w-full min-w-0 max-w-6xl overflow-x-hidden px-4 py-16 sm:px-6">
       <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Memberships</p>
-      <h1 className="mt-3 max-w-3xl text-5xl text-charcoal">
+      <h1 className="mt-3 max-w-3xl text-balance text-3xl text-charcoal sm:text-4xl md:text-5xl">
         A one-time inspection, or a yearly membership.
       </h1>
-      <p className="mt-4 max-w-2xl text-lg text-steel">
+      <p className="mt-4 max-w-2xl text-lg break-words text-steel">
         Inspection and Essential cover the house and attached garage. Preferred
         also includes one extra building — a detached garage, shop, or similar.
         Unused repair money does not roll over. It is not refunded.
       </p>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <div className="mt-12 grid min-w-0 gap-6 lg:grid-cols-3">
         <MembershipCard
           name={plans.inspection.name}
           price={plans.inspection.price}
@@ -59,9 +59,10 @@ export default function PlansPage() {
         />
       </div>
 
-      <section className="mt-16 overflow-x-auto">
+      <section className="mt-16 hidden md:block">
         <h2 className="text-3xl text-charcoal">Side by side</h2>
-        <table className="mt-6 w-full min-w-[40rem] text-left text-sm">
+        <div className="mt-6 w-full overflow-x-auto overscroll-x-contain">
+        <table className="w-full min-w-[36rem] text-left text-sm">
           <thead>
             <tr className="border-b border-steel-light">
               <th className="py-3 pr-4 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
@@ -98,6 +99,7 @@ export default function PlansPage() {
             <Row label="Christmas lights (hang + take-down)" a="Quoted" b="Member price or credit" c="Member price or credit" />
           </tbody>
         </table>
+        </div>
       </section>
 
       <section className="mt-16">
@@ -243,7 +245,7 @@ function MembershipCard({
 }) {
   return (
     <article
-      className={`flex flex-col rounded-sm border p-8 ${
+      className={`flex min-w-0 flex-col rounded-sm border p-6 sm:p-8 ${}
         featured ? "border-red shadow-[0_0_0_1px_#c44536]" : "border-steel-light bg-white"
       }`}
     >
@@ -257,7 +259,7 @@ function MembershipCard({
         {money(price)}
         <span className="text-lg text-steel"> / {per}</span>
       </p>
-      <p className="mt-3 text-steel">{blurb}</p>
+      <p className="mt-3 break-words text-steel">{blurb}</p>
       <ul className="mt-6 flex-1 space-y-3 text-charcoal">
         {features.map((f) => (
           <li key={f} className="flex gap-2">

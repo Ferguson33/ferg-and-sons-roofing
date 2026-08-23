@@ -13,7 +13,7 @@ export function Logo({ className = "h-14 w-auto", priority = false }: LogoProps)
       width={1306}
       height={1030}
       priority={priority}
-      className={className}
+      className={`max-w-full ${className}`}
       sizes="180px"
     />
   );

@@ -20,8 +20,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-steel-light/80 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" aria-label={`${company.legalName} home`} onClick={() => setOpen(false)}>
-          <Logo className="h-12 w-auto sm:h-14" priority />
+        <Link href="/" className="min-w-0 shrink" aria-label={`${company.legalName} home`} onClick={() => setOpen(false)}>
+          <Logo className="h-11 w-auto sm:h-14" priority />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
@@ -49,15 +49,24 @@ export function Header() {
           </Link>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-steel-light text-charcoal lg:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <a
+            href={`tel:${company.tel}`}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-steel-light text-charcoal"
+            aria-label={`Call ${displayPhone()}`}
+          >
+            <Phone className="h-5 w-5 text-red" />
+          </a>
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-steel-light text-charcoal"
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (

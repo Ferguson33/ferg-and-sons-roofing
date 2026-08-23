@@ -6,10 +6,10 @@ import { company, displayPhone, money, plans } from "@/lib/company";
 export default function HomePage() {
   return (
     <>
-      <section className="bg-paper">
+      <section className="min-w-0 bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
-            <p className="font-display text-xl font-bold uppercase tracking-[0.12em] text-charcoal sm:text-2xl">
+            <p className="font-display text-lg font-bold uppercase leading-snug tracking-[0.06em] text-charcoal sm:text-xl sm:tracking-[0.1em] md:text-2xl">
               {company.legalName}
             </p>
             <p className="mt-2 text-sm text-steel sm:text-base">
@@ -57,7 +57,7 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <p className="font-display text-xs uppercase tracking-[0.28em] text-red">What we do</p>
-          <h2 className="mt-3 max-w-3xl text-4xl text-charcoal">
+          <h2 className="mt-3 max-w-3xl text-3xl text-charcoal sm:text-4xl">
             Memberships, inspections, and new roofs.
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -112,7 +112,7 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="font-display text-xs uppercase tracking-[0.28em] text-red">The report</p>
-          <h2 className="mt-3 text-4xl text-charcoal">A written roof report after every inspection.</h2>
+          <h2 className="mt-3 text-3xl text-charcoal sm:text-4xl">A written roof report after every inspection.</h2>
           <p className="mt-4 text-lg leading-relaxed text-steel">
             You keep dated photos and findings. Each item is marked
             satisfactory, needs maintenance, monitor, or replace.

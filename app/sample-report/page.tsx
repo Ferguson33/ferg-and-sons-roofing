@@ -38,16 +38,16 @@ const photos = [
 
 export default function SampleReportPage() {
   return (
-    <div className="bg-paper">
+    <div className="min-w-0 max-w-full overflow-x-clip bg-paper">
       <div className="border-b border-red bg-red px-4 py-2 text-center text-sm font-medium text-white">
         Example only — not a real property. A full report has a photo for every finding.
       </div>
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <article className="paper">
-          <header className="flex items-start justify-between gap-6 border-b-2 border-charcoal pb-5">
+          <header className="flex flex-col items-start justify-between gap-6 border-b-2 border-charcoal pb-5 sm:flex-row">
             <div>
-              <Logo className="h-16 w-auto" />
-              <p className="mt-3 text-xs leading-relaxed text-steel">
+              <Logo className="h-14 w-auto sm:h-16" />
+              <p className="mt-3 break-words text-xs leading-relaxed text-steel">
                 {mailingLine}
                 <br />
                 {company.owner} · {displayPhone()}
@@ -55,8 +55,8 @@ export default function SampleReportPage() {
                 {company.email}
               </p>
             </div>
-            <div className="text-right">
-              <p className="font-display text-3xl uppercase tracking-[0.14em] text-charcoal">
+            <div className="sm:text-right">
+              <p className="font-display text-2xl uppercase tracking-[0.14em] text-charcoal sm:text-3xl">
                 Roof report
               </p>
               <p className="mt-2 font-medium">RPT-SAMPLE</p>
@@ -87,7 +87,8 @@ export default function SampleReportPage() {
             </div>
           </section>
 
-          <table className="mt-8 w-full text-sm">
+          <div className="mt-8 w-full overflow-x-auto overscroll-x-contain">
+          <table className="w-full min-w-[32rem] text-sm">
             <thead>
               <tr className="border-b border-steel-light text-left">
                 <th className="py-2 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
@@ -137,6 +138,7 @@ export default function SampleReportPage() {
               </tr>
             </tbody>
           </table>
+          </div>
 
           <section className="mt-8">
             <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">

@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="mt-auto bg-charcoal-deep text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <Logo className="h-20 w-auto rounded-sm bg-white" />
+          <Logo className="h-16 w-auto max-w-full rounded-sm bg-white sm:h-20" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-light">
             Inspections, repairs, and new roofs. Christmas lights too.
           </p>
@@ -15,13 +15,13 @@ export function Footer() {
         <div>
           <h2 className="font-display text-sm uppercase tracking-[0.22em] text-red">Pages</h2>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link className="hover:text-red" href="/plans">Memberships</Link></li>
-            <li><Link className="hover:text-red" href="/contact?need=inspection">Inspections</Link></li>
-            <li><Link className="hover:text-red" href="/contact?need=bid">New roofs</Link></li>
-            <li><Link className="hover:text-red" href="/plans#christmas-lights">Christmas lights</Link></li>
-            <li><Link className="hover:text-red" href="/problems">Common problems</Link></li>
-            <li><Link className="hover:text-red" href="/about">About</Link></li>
-            <li><Link className="hover:text-red" href="/sample-report">Sample roof report</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/plans">Memberships</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/contact?need=inspection">Inspections</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/contact?need=bid">New roofs</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/plans#christmas-lights">Christmas lights</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/problems">Common problems</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/about">About</Link></li>
+            <li><Link className="inline-block py-1.5 hover:text-red" href="/sample-report">Sample roof report</Link></li>
           </ul>
         </div>
         <div>

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div className="mx-auto w-full min-w-0 max-w-6xl overflow-x-hidden px-4 py-16 sm:px-6">
       <p className="font-display text-xs uppercase tracking-[0.28em] text-red">About</p>
-      <h1 className="mt-3 max-w-3xl text-5xl text-charcoal">
+      <h1 className="mt-3 max-w-3xl text-3xl text-charcoal sm:text-4xl md:text-5xl">
         20+ years of roofing experience.
       </h1>
 

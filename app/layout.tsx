@@ -46,16 +46,18 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1f2124",
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#f6f6f4",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${oswald.variable} ${source.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-full min-w-0 flex-col overflow-x-clip font-sans">
         <PwaRegister />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="min-w-0 flex-1 overflow-x-clip">{children}</main>
         <Footer />
       </body>
     </html>
