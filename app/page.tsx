@@ -6,21 +6,21 @@ import { company, displayPhone, money, plans } from "@/lib/company";
 export default function HomePage() {
   return (
     <>
-      <section className="bg-charcoal text-white">
+      <section className="bg-paper">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
-            <p className="font-display text-xl font-bold uppercase tracking-[0.12em] text-white sm:text-2xl">
+            <p className="font-display text-xl font-bold uppercase tracking-[0.12em] text-charcoal sm:text-2xl">
               {company.legalName}
             </p>
-            <p className="mt-2 text-sm text-steel-light sm:text-base">
+            <p className="mt-2 text-sm text-steel sm:text-base">
               {company.serviceArea}
             </p>
-            <h1 className="mt-6 text-4xl leading-[1.1] sm:text-6xl">
+            <h1 className="mt-6 text-4xl leading-[1.1] text-charcoal sm:text-6xl">
               <span className="block">Inspections</span>
               <span className="block">Repairs</span>
               <span className="block">New roofs</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel-light">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel">
               Yearly memberships too.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -28,15 +28,15 @@ export default function HomePage() {
                 Memberships
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/contact?need=inspection" className="btn-ghost bg-transparent text-white border-white/25">
+              <Link href="/contact?need=inspection" className="btn-ghost">
                 Inspections
               </Link>
-              <Link href="/contact?need=bid" className="btn-ghost bg-transparent text-white border-white/25">
+              <Link href="/contact?need=bid" className="btn-ghost">
                 New roofs
               </Link>
             </div>
             <p className="mt-5">
-              <Link href="#christmas-lights" className="text-sm text-steel-light hover:text-white">
+              <Link href="#christmas-lights" className="text-sm text-steel hover:text-charcoal">
                 Christmas lights — hang and take-down →
               </Link>
             </p>
