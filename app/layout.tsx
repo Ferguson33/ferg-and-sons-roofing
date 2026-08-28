@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: `${company.legalName} · Inspections, repairs, and new roofs`,
     template: `%s · ${company.legalName}`,
   },
-  description: `${company.legalName}. Yearly memberships, roof repairs and inspections, and new roofs in ${company.serviceArea}.`,
+  description: `${company.legalName}. Yearly memberships, roof repairs and inspections, and new roofs in ${company.serviceArea}. Second homes, cabins, rentals, and year-round houses.`,
   applicationName: company.legalName,
   appleWebApp: {
     capable: true,

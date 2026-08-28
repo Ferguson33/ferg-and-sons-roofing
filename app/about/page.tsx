@@ -5,7 +5,7 @@ import { company, displayPhone } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `${company.legalName}. 20+ years of roofing experience. Inspections, repairs, and new roofs in ${company.serviceArea}.`,
+  description: `${company.legalName}. 20+ years of roofing experience. Inspections, repairs, yearly memberships, and new roofs in ${company.serviceArea} — second homes, cabins, rentals, and year-round houses.`,
 };
 
 export default function AboutPage() {
@@ -23,6 +23,12 @@ export default function AboutPage() {
             memberships, and new roofs. We inspect, do the small work, and leave
             a written report. If the roof needs to be replaced, we quote it and
             we install it.
+          </p>
+          <p>
+            A lot of the work is second homes, cabins, rentals, and Airbnbs —
+            roofs that sit through the winter with nobody watching them.
+            Year-round houses get the same visit. The hard part in this county
+            is getting a contractor to show up. We do.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link href="/contact?need=inspection" className="btn-primary">Request an inspection</Link>

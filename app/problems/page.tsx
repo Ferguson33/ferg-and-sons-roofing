@@ -17,7 +17,9 @@ export default function ProblemsPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-steel">
         Membership covers the first list. The second list means the roof needs
-        to be replaced. We will say so in the report and quote the new roof.
+        to be replaced. We will say so in the report and quote the new roof. A
+        yearly visit catches this on cabins and rentals you are not in all year,
+        and on the house you live in.
       </p>
 
       <section className="mt-14">

@@ -5,6 +5,12 @@ import { useSearchParams } from "next/navigation";
 import { company, plans } from "@/lib/company";
 
 const roofTypes = ["Metal", "Asphalt", "Other"] as const;
+const propertyKinds = [
+  "Year-round home",
+  "Second home or cabin",
+  "Rental or Airbnb",
+  "Not sure",
+] as const;
 const planChoices = [
   "Not sure",
   plans.inspection.name,
@@ -45,6 +51,7 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [roof, setRoof] = useState<(typeof roofTypes)[number]>("Metal");
+  const [propertyKind, setPropertyKind] = useState<(typeof propertyKinds)[number]>("Not sure");
   const [plan, setPlan] = useState<(typeof planChoices)[number]>(defaultPlan);
   const [need, setNeed] = useState<(typeof needs)[number]>(defaultNeed);
   const [message, setMessage] = useState("");
@@ -56,6 +63,7 @@ export function ContactForm() {
       `Phone: ${phone}`,
       `Email: ${email || "—"}`,
       `Address: ${address || "—"}`,
+      `Property: ${propertyKind}`,
       `Roof type: ${roof}`,
       `Need: ${need}`,
       `Membership: ${plan}`,
@@ -63,7 +71,7 @@ export function ContactForm() {
       "Message:",
       message || "—",
     ].join("\n");
-  }, [name, phone, email, address, roof, plan, need, message]);
+  }, [name, phone, email, address, propertyKind, roof, plan, need, message]);
 
   const mailto = `mailto:${company.email}?subject=${encodeURIComponent(
     `${company.legalName} — ${need}`
@@ -116,6 +124,17 @@ export function ContactForm() {
         <label className="field sm:col-span-2">
           <span>Address</span>
           <input value={address} onChange={(e) => setAddress(e.target.value)} autoComplete="street-address" />
+        </label>
+        <label className="field sm:col-span-2">
+          <span>What kind of place</span>
+          <select
+            value={propertyKind}
+            onChange={(e) => setPropertyKind(e.target.value as typeof propertyKind)}
+          >
+            {propertyKinds.map((k) => (
+              <option key={k}>{k}</option>
+            ))}
+          </select>
         </label>
         <label className="field sm:col-span-2">
           <span>What do you need</span>

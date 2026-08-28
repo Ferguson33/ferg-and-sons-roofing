@@ -9,7 +9,8 @@ export function Footer() {
         <div>
           <Logo className="h-16 w-auto max-w-full rounded-sm bg-white sm:h-20" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-light">
-            Inspections, repairs, and new roofs. Christmas lights too.
+            Inspections, repairs, and yearly memberships. Cabins, rentals, and
+            year-round homes. Christmas lights too.
           </p>
         </div>
         <div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { MembershipAudience } from "@/components/MembershipAudience";
 import { company, displayPhone, money, plans } from "@/lib/company";
 
 export default function HomePage() {
@@ -21,7 +22,7 @@ export default function HomePage() {
               <span className="block">New roofs</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel">
-              Yearly memberships too.
+              Yearly memberships too — cabins, rentals, and year-round homes.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/plans" className="btn-primary">
@@ -35,7 +36,10 @@ export default function HomePage() {
                 New roofs
               </Link>
             </div>
-            <p className="mt-5">
+            <p className="mt-5 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:gap-x-5">
+              <Link href="#who-its-for" className="text-sm text-steel hover:text-charcoal">
+                Second homes, cabins, rentals →
+              </Link>
               <Link href="#christmas-lights" className="text-sm text-steel hover:text-charcoal">
                 Christmas lights — hang and take-down →
               </Link>
@@ -66,7 +70,7 @@ export default function HomePage() {
               alt="Metal roof fasteners"
               kicker="Yearly"
               title="Memberships"
-              body={`Each year we inspect the roof, leave a written report, and do small repairs up to the amount in the plan. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
+              body={`Second homes, cabins, rentals, and year-round houses. Each year we inspect, leave a written report, and do small repairs up to the plan amount. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
               href="/plans"
               cta="See memberships"
             />
@@ -90,6 +94,10 @@ export default function HomePage() {
             />
           </div>
         </div>
+      </section>
+
+      <section id="who-its-for" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <MembershipAudience withImage />
       </section>
 
       <section id="christmas-lights" className="scroll-mt-24 border-y border-steel-light bg-paper">

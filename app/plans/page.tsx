@@ -11,7 +11,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Memberships",
-  description: `Inspection ${money(plans.inspection.price)}, Essential ${money(plans.essential.price)} / year, or Preferred ${money(plans.preferred.price)} / year.`,
+  description: `Inspection ${money(plans.inspection.price)}, Essential ${money(plans.essential.price)} / year, or Preferred ${money(plans.preferred.price)} / year. For second homes, cabins, rentals, Airbnbs, and year-round houses in Sublette County.`,
 };
 
 export default function PlansPage() {
@@ -21,6 +21,12 @@ export default function PlansPage() {
       <h1 className="mt-3 max-w-3xl text-balance text-3xl text-charcoal sm:text-4xl md:text-5xl">
         A one-time inspection, or a yearly membership.
       </h1>
+      <p className="mt-4 max-w-2xl text-lg break-words text-steel">
+        Second homes, cabins, rentals, Airbnbs, and year-round houses. Same
+        memberships. The hard part up here is getting a contractor to show up.
+        That is what the {money(plans.inspection.price)} inspection is for. We
+        show up.
+      </p>
       <p className="mt-4 max-w-2xl text-lg break-words text-steel">
         Inspection and Essential cover the house and attached garage. Preferred
         also includes one extra building — a detached garage, shop, or similar.
@@ -245,9 +251,7 @@ function MembershipCard({
 }) {
   return (
     <article
-      className={`flex min-w-0 flex-col rounded-sm border p-6 sm:p-8 ${}
-        featured ? "border-red shadow-[0_0_0_1px_#c44536]" : "border-steel-light bg-white"
-      }`}
+      className={`flex min-w-0 flex-col rounded-sm border p-6 sm:p-8 ${featured ? "border-red shadow-[0_0_0_1px_#c44536]" : "border-steel-light bg-white"}`}
     >
       {kicker && (
         <p className="font-display text-xs uppercase tracking-[0.22em] text-red">

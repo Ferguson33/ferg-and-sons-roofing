@@ -1,7 +1,8 @@
 export const company = {
   legalName: "Ferg & Sons Roofing, LLC",
   shortName: "Ferg & Sons Roofing",
-  tagline: "Inspections, repairs, and new roofs in Sublette County.",
+  tagline:
+    "Inspections, repairs, and yearly memberships in Sublette County — second homes, cabins, rentals, and year-round houses.",
   email: "josh.fergusonsublette@gmail.com",
   phone: "307-231-6026",
   tel: "+13072316026",
@@ -196,3 +197,13 @@ export function displayPhone(phone: string = company.phone) {
 export function money(n: number) {
   return `$${n.toLocaleString("en-US")}`;
 }
+
+export const membershipAudience = {
+  kicker: "Who it’s for",
+  headline: "Second homes, cabins, rentals, and the house you live in.",
+  paragraphs: [
+    "Sublette County is a place people come to and a place people live. A lot of the roofs here are second homes, cabins, rentals, and Airbnbs. They take snow and wind whether anyone is in them or not.",
+    "If you are not here, you will not see a loose screw or a failed pipe boot. We will. Each year we inspect, leave a dated report, and do the small repairs in the plan.",
+    `If this is your year-round house, it is the same membership. The hard part up here is getting a contractor to actually show up. That is what the ${money(plans.inspection.price)} inspection is for. We show up.`,
+  ],
+} as const;
