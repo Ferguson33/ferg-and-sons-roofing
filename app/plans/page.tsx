@@ -11,7 +11,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Memberships",
-  description: `Inspection ${money(plans.inspection.price)}, Essential ${money(plans.essential.price)} / year, or Preferred ${money(plans.preferred.price)} / year. For second homes, cabins, rentals, Airbnbs, and year-round houses in Sublette County.`,
+  description: `Inspection / Bid ${money(plans.inspection.price)}, Essential ${money(plans.essential.price)} / year, or Preferred ${money(plans.preferred.price)} / year. For second homes, cabins, rentals, Airbnbs, and year-round houses in Sublette County.`,
 };
 
 export default function PlansPage() {
@@ -19,16 +19,16 @@ export default function PlansPage() {
     <div className="mx-auto w-full min-w-0 max-w-6xl overflow-x-hidden px-4 py-16 sm:px-6">
       <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Memberships</p>
       <h1 className="mt-3 max-w-3xl text-balance text-3xl text-charcoal sm:text-4xl md:text-5xl">
-        A one-time inspection, or a yearly membership.
+        A one-time inspection / bid, or a yearly membership.
       </h1>
       <p className="mt-4 max-w-2xl text-lg break-words text-steel">
         Second homes, cabins, rentals, Airbnbs, and year-round houses. Same
         memberships. The hard part up here is getting a contractor to show up.
-        That is what the {money(plans.inspection.price)} inspection is for. We
-        show up.
+        That is what the {money(plans.inspection.price)} Inspection / Bid is for.
+        We show up.
       </p>
       <p className="mt-4 max-w-2xl text-lg break-words text-steel">
-        Inspection and Essential cover the house and attached garage. Preferred
+        Inspection / Bid and Essential cover the house and attached garage. Preferred
         also includes one extra building — a detached garage, shop, or similar.
         Unused repair money does not roll over. It is not refunded.
       </p>
@@ -74,7 +74,7 @@ export default function PlansPage() {
                 Included
               </th>
               <th className="py-3 pr-4 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
-                Inspection {money(plans.inspection.price)}
+                Inspection / Bid {money(plans.inspection.price)}
               </th>
               <th className="py-3 pr-4 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
                 Essential {money(plans.essential.price)}
@@ -96,7 +96,7 @@ export default function PlansPage() {
             <Row label="Work past the included amount" a="Priced before work" b="Priced before work" c="10% off that labor" />
             <Row label="Tear-off or new roof" a="Quoted separately" b="Quoted separately" c="Quoted separately" />
             <Row
-              label={`$${plans.inspection.price} inspection comes off a new roof we install`}
+              label={`$${plans.inspection.price} Inspection / Bid comes off a new roof we install`}
               a="Yes"
               b="Yes"
               c="Yes"
@@ -110,10 +110,11 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">The visit</h2>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-steel">
-          Inspection is not a repair visit. If we have the materials, we can do
-          the work that day. If we don’t, we quote it and put you on the
-          schedule. Essential and Preferred include labor and materials up to the
-          plan amount. Preferred adds a debris clean if the roof is safe.
+          Inspection / Bid is not a repair visit. If we have the materials, we
+          can do the work that day. If we don’t, we quote it and put you on the
+          schedule. If the roof needs to come off, we bid it. Essential and
+          Preferred include labor and materials up to the plan amount. Preferred
+          adds a debris clean if the roof is safe.
         </p>
       </section>
 
@@ -164,9 +165,9 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">Small repairs included</h2>
         <p className="mt-3 max-w-2xl text-steel">
-          Inspection does not include repairs. If we have the materials, we can
-          do the work that visit and bill it separately. If we don’t, we quote
-          it and put you on the schedule. Essential up to {money(plans.essential.allowance)}{" "}
+          Inspection / Bid does not include repairs. If we have the materials, we
+          can do the work that visit and bill it separately. If we don’t, we
+          quote it and put you on the schedule. Essential up to {money(plans.essential.allowance)}{" "}
           in labor and materials. Preferred up to {money(plans.preferred.allowance)}{" "}
           in labor and materials. Past that amount, we price the extra work first.
           Preferred is 10% off that extra labor. Unused amount does not roll over.
@@ -188,8 +189,8 @@ export default function PlansPage() {
           <h2 className="text-2xl text-charcoal">If you need a new roof</h2>
           <p className="mt-3 leading-relaxed text-steel">
             A new roof is quoted separately. We install it. If you hire us for
-            that job, the {money(plans.inspection.price)} inspection comes off
-            the new roof price. Membership work already done is not refunded.
+            that job, the {money(plans.inspection.price)} Inspection / Bid comes
+            off the new roof price. Membership work already done is not refunded.
           </p>
         </div>
         <div id="christmas-lights" className="scroll-mt-24 border border-steel-light bg-white p-6 sm:p-8">
@@ -207,13 +208,13 @@ export default function PlansPage() {
         <ul className="mt-4 space-y-2 text-steel">
           <li>Extra buildings past what’s included — quoted. Preferred includes one additional building.</li>
           <li>Unused repair money — no rollover, no refund.</li>
-          <li>A new roof or tear-off — quoted separately. If we install it, the {money(plans.inspection.price)} inspection comes off that job.</li>
+          <li>A new roof or tear-off — quoted separately. If we install it, the {money(plans.inspection.price)} Inspection / Bid comes off that job.</li>
           <li>Christmas lights — extra. Yearly hang and take-down. Members get preferred pricing or a credit.</li>
         </ul>
       </section>
 
       <div className="mt-12 flex flex-wrap gap-3">
-        <Link href="/contact" className="btn-primary">Request an inspection</Link>
+        <Link href="/contact?need=inspection" className="btn-primary">Request Inspection / Bid</Link>
         <Link href="/contact?need=bid" className="btn-ghost">New roof</Link>
         <Link href="/contact?need=lights" className="btn-ghost">Christmas lights</Link>
       </div>

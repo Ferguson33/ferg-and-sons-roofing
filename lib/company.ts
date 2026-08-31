@@ -23,14 +23,14 @@ export const mailingLine = `${company.mailing.line1}, ${company.mailing.city}, $
 export const plans = {
   inspection: {
     slug: "inspection",
-    name: "Inspection",
+    name: "Inspection / Bid",
     price: 99,
     allowance: 0,
     per: "visit",
-    blurb: "House and attached garage. We inspect the roof and send a dated report with photos. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule. If you hire us for a new roof, the $99 comes off that job.",
+    blurb: "House and attached garage. We inspect the roof and send a dated report with photos. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule. If the roof needs to be replaced, we quote it. If you hire us for a new roof, the $99 comes off that job.",
     features: [
       "House roof plus attached garage",
-      "Inspection and dated report with photos",
+      "Dated report with photos. A bid when the roof needs to come off.",
       "No repairs included. Same-day work if we have the materials, billed separately.",
       "If we don't have the materials, we quote it and put you on the schedule",
       "If we install a new roof, the $99 comes off that job",
@@ -47,7 +47,7 @@ export const plans = {
       "Yearly inspection and dated report with photos",
       "House roof plus attached garage",
       "Up to $100 in labor and materials",
-      "If we install a new roof, the $99 inspection comes off that job",
+      "If we install a new roof, the $99 Inspection / Bid comes off that job",
     ],
   },
   preferred: {
@@ -63,7 +63,7 @@ export const plans = {
       "Up to $200 in labor and materials",
       "Debris clean if the roof is safe",
       "10% off extra labor after the $200",
-      "If we install a new roof, the $99 inspection comes off that job",
+      "If we install a new roof, the $99 Inspection / Bid comes off that job",
     ],
   },
 } as const;
@@ -206,6 +206,6 @@ export const membershipAudience = {
   paragraphs: [
     "Sublette County is a place people come to and a place people live. A lot of the roofs here are second homes, cabins, rentals, and Airbnbs. They take snow and wind whether anyone is in them or not.",
     "If you are not here, you will not see a loose screw or a failed pipe boot. We will. Each year we inspect, send a dated report, and do the small repairs in the plan.",
-    `If this is your year-round house, it is the same membership. The hard part up here is getting a contractor to actually show up. That is what the ${money(plans.inspection.price)} inspection is for. We show up.`,
+    `If this is your year-round house, it is the same membership. The hard part up here is getting a contractor to actually show up. That is what the ${money(plans.inspection.price)} ${plans.inspection.name} is for. We show up.`,
   ],
 } as const;

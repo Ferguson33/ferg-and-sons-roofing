@@ -77,18 +77,18 @@ export default function HomePage() {
             <ServiceCard
               image="/images/ridge.jpg"
               alt="Ridge on an asphalt shingle roof"
-              kicker={`${money(plans.inspection.price)} inspection`}
-              title="Inspections and repairs"
-              body={`The ${money(plans.inspection.price)} inspection: we look at the roof and send a written report. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule.`}
+              kicker={`${money(plans.inspection.price)} / visit`}
+              title="Inspection / Bid"
+              body={`The ${money(plans.inspection.price)} Inspection / Bid: we look at the roof and send a written report. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule. If the roof needs to come off, we bid it.`}
               href="/contact?need=inspection"
-              cta="Request an inspection"
+              cta="Request Inspection / Bid"
             />
             <ServiceCard
               image="/images/hero.jpg"
               alt="Ranch house with a roof on sagebrush ground"
               kicker="Replacement"
               title="New roofs"
-              body={`If the roof needs to be replaced, we quote the job and we install it. Hire us for the new roof and the ${money(plans.inspection.price)} inspection comes off that price.`}
+              body={`If the roof needs to be replaced, we quote the job and we install it. Hire us for the new roof and the ${money(plans.inspection.price)} Inspection / Bid comes off that price.`}
               href="/contact?need=bid"
               cta="Ask about a new roof"
             />
@@ -157,13 +157,13 @@ export default function HomePage() {
       <section className="bg-charcoal text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div>
-            <h2 className="text-3xl">Call for an inspection, a membership, or a new roof.</h2>
+            <h2 className="text-3xl">Call for an inspection / bid, a membership, or a new roof.</h2>
             <p className="mt-2 text-steel-light">
               {company.owner} · {displayPhone()} · {company.serviceArea}
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/contact?need=inspection" className="btn-primary">Request an inspection</Link>
+            <Link href="/contact?need=inspection" className="btn-primary">Request Inspection / Bid</Link>
             <Link href="/contact?need=bid" className="btn-ghost bg-transparent text-white border-white/25">
               New roof
             </Link>

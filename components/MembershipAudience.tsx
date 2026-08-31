@@ -34,7 +34,7 @@ export function MembershipAudience({
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link href="/contact?need=inspection" className="btn-ghost">
-            Request an inspection
+            Request Inspection / Bid
           </Link>
         </div>
       )}

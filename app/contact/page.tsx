@@ -5,7 +5,7 @@ import { company, displayPhone } from "@/lib/company";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Request an inspection. Call ${company.owner} at ${displayPhone()}. ${company.serviceArea}.`,
+  description: `Request an inspection / bid. Call ${company.owner} at ${displayPhone()}. ${company.serviceArea}.`,
 };
 
 export default function ContactPage() {
@@ -15,7 +15,7 @@ export default function ContactPage() {
         <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Contact</p>
         <h1 className="mt-3 text-3xl text-charcoal sm:text-4xl md:text-5xl">Contact</h1>
         <p className="mt-4 max-w-xl text-lg text-steel">
-          Inspection, membership, new roof, or Christmas lights. Cabins,
+          Inspection / bid, membership, new roof, or Christmas lights. Cabins,
           rentals, second homes, or the house you live in. Leave a name, phone,
           and address. We’ll call back.
         </p>
