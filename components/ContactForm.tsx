@@ -55,7 +55,8 @@ export function ContactForm() {
   const [plan, setPlan] = useState<(typeof planChoices)[number]>(defaultPlan);
   const [need, setNeed] = useState<(typeof needs)[number]>(defaultNeed);
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "copied" | "mailed">("idle");
+  const [gotcha, setGotcha] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "copied">("idle");
 
   const body = useMemo(() => {
     return [
@@ -73,10 +74,6 @@ export function ContactForm() {
     ].join("\n");
   }, [name, phone, email, address, propertyKind, roof, plan, need, message]);
 
-  const mailto = `mailto:${company.email}?subject=${encodeURIComponent(
-    `${company.legalName} — ${need}`
-  )}&body=${encodeURIComponent(body)}`;
-
   function requireBasics() {
     if (!name.trim() || !phone.trim()) {
       alert("A name and a phone number are needed so we can call you back.");
@@ -85,11 +82,55 @@ export function ContactForm() {
     return true;
   }
 
-  function onMail(e: FormEvent) {
+  function resetForm() {
+    setName("");
+    setPhone("");
+    setEmail("");
+    setAddress("");
+    setRoof("Metal");
+    setPropertyKind("Not sure");
+    setPlan(defaultPlan);
+    setNeed(defaultNeed);
+    setMessage("");
+    setGotcha("");
+  }
+
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!requireBasics()) return;
-    window.location.href = mailto;
-    setStatus("mailed");
+    setStatus("sending");
+
+    const payload: Record<string, string> = {
+      name: name.trim(),
+      phone: phone.trim(),
+      address: address.trim() || "—",
+      property: propertyKind,
+      roof,
+      need,
+      membership: plan,
+      message: message.trim() || "—",
+      _subject: `${company.legalName} — ${need}`,
+      _gotcha: gotcha,
+    };
+    if (email.trim()) {
+      payload.email = email.trim();
+    }
+
+    try {
+      const res = await fetch(company.formspree, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("send-failed");
+      resetForm();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   async function onCopy() {
@@ -99,23 +140,40 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onMail} className="grid gap-5">
+    <form action={company.formspree} method="POST" onSubmit={onSubmit} className="grid gap-5">
+      <input type="hidden" name="_subject" value={`${company.legalName} — ${need}`} />
+      <input
+        type="text"
+        name="_gotcha"
+        value={gotcha}
+        onChange={(e) => setGotcha(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="field">
           <span>Name</span>
-          <input value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
+          <input name="name" value={name} onChange={(e) => setName(e.target.value)} required autoComplete="name" />
         </label>
         <label className="field">
           <span>Phone</span>
-          <input value={phone} onChange={(e) => setPhone(e.target.value)} required autoComplete="tel" />
+          <input name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required autoComplete="tel" />
         </label>
         <label className="field">
           <span>Email</span>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
+          />
         </label>
         <label className="field">
           <span>Roof type</span>
-          <select value={roof} onChange={(e) => setRoof(e.target.value as typeof roof)}>
+          <select name="roof" value={roof} onChange={(e) => setRoof(e.target.value as typeof roof)}>
             {roofTypes.map((t) => (
               <option key={t}>{t}</option>
             ))}
@@ -123,11 +181,17 @@ export function ContactForm() {
         </label>
         <label className="field sm:col-span-2">
           <span>Address</span>
-          <input value={address} onChange={(e) => setAddress(e.target.value)} autoComplete="street-address" />
+          <input
+            name="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            autoComplete="street-address"
+          />
         </label>
         <label className="field sm:col-span-2">
           <span>What kind of place</span>
           <select
+            name="property"
             value={propertyKind}
             onChange={(e) => setPropertyKind(e.target.value as typeof propertyKind)}
           >
@@ -138,7 +202,7 @@ export function ContactForm() {
         </label>
         <label className="field sm:col-span-2">
           <span>What do you need</span>
-          <select value={need} onChange={(e) => setNeed(e.target.value as typeof need)}>
+          <select name="need" value={need} onChange={(e) => setNeed(e.target.value as typeof need)}>
             {needs.map((n) => (
               <option key={n}>{n}</option>
             ))}
@@ -146,7 +210,7 @@ export function ContactForm() {
         </label>
         <label className="field sm:col-span-2">
           <span>Membership</span>
-          <select value={plan} onChange={(e) => setPlan(e.target.value as typeof plan)}>
+          <select name="membership" value={plan} onChange={(e) => setPlan(e.target.value as typeof plan)}>
             {planChoices.map((p) => (
               <option key={p}>{p}</option>
             ))}
@@ -155,6 +219,7 @@ export function ContactForm() {
         <label className="field sm:col-span-2">
           <span>Message</span>
           <textarea
+            name="message"
             rows={5}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -163,20 +228,26 @@ export function ContactForm() {
         </label>
       </div>
       <div className="flex flex-wrap gap-3">
-        <button type="submit" className="btn-primary">
-          Send request
+        <button type="submit" className="btn-primary" disabled={status === "sending"}>
+          {status === "sending" ? "Sending…" : "Send request"}
         </button>
-        <button type="button" className="btn-ghost" onClick={onCopy}>
+        <button type="button" className="btn-ghost" onClick={onCopy} disabled={status === "sending"}>
           Copy to send later
         </button>
       </div>
       {status === "copied" && (
         <p className="text-sm text-steel">Copied. Paste it into a text or an email.</p>
       )}
-      {status === "mailed" && (
+      {status === "sent" && (
+        <p className="text-sm text-steel">Sent. We’ll call you back.</p>
+      )}
+      {status === "error" && (
         <p className="text-sm text-steel">
-          Your email app should open. If it doesn’t, send it to{" "}
-          <a className="underline" href={`mailto:${company.email}`}>{company.email}</a>.
+          Could not send. Call {company.owner} or email{" "}
+          <a className="underline" href={`mailto:${company.email}`}>
+            {company.email}
+          </a>
+          .
         </p>
       )}
     </form>

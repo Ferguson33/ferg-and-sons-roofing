@@ -3,7 +3,8 @@ export const company = {
   shortName: "Ferg & Sons Roofing",
   tagline:
     "Inspections, repairs, and yearly memberships in Sublette County — second homes, cabins, rentals, and year-round houses.",
-  email: "josh.fergusonsublette@gmail.com",
+  email: "FergandSonsRoofingLLC@gmail.com",
+  formspree: "https://formspree.io/f/mrpgejjo",
   phone: "307-231-6026",
   tel: "+13072316026",
   owner: "Josh Ferguson",

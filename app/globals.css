@@ -71,6 +71,12 @@ h3,
   border-color: var(--color-charcoal);
 }
 
+.btn-primary:disabled,
+.btn-ghost:disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
 @media (max-width: 639px) {
   .btn-primary,
   .btn-ghost {
