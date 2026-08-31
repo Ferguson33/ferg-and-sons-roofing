@@ -42,7 +42,6 @@ export default function PlansPage() {
           features={plans.inspection.features}
           href="/contact?plan=inspection"
           featured={false}
-          kicker="No repairs"
         />
         <MembershipCard
           name={plans.essential.name}
@@ -91,10 +90,10 @@ export default function PlansPage() {
             <Row label="Detached garage, shop, or similar" a="Quoted" b="Quoted" c="One included" />
             <Row label="Inspection" a="Yes" b="Yes" c="Yes" />
             <Row label="Dated report with photos" a="Yes" b="Yes" c="Yes" />
-            <Row label="Labor and materials" a="None" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
+            <Row label="Labor and materials" a="Not included" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
             <Row label="Unused repair money" a="—" b="Does not roll over" c="Does not roll over" />
             <Row label="Debris clean if the roof is safe" a="No" b="No" c="Yes" />
-            <Row label="Work past the included amount" a="—" b="Priced before work" c="10% off that labor" />
+            <Row label="Work past the included amount" a="Priced before work" b="Priced before work" c="10% off that labor" />
             <Row label="Tear-off or new roof" a="Quoted separately" b="Quoted separately" c="Quoted separately" />
             <Row
               label={`$${plans.inspection.price} inspection comes off a new roof we install`}
@@ -111,8 +110,9 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">The visit</h2>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-steel">
-          Inspection is look-and-report only. We do not repair anything on that
-          visit. Essential and Preferred include labor and materials up to the
+          Inspection is not a repair visit. If we have the materials, we can do
+          the work that day. If we don’t, we quote it and put you on the
+          schedule. Essential and Preferred include labor and materials up to the
           plan amount. Preferred adds a debris clean if the roof is safe.
         </p>
       </section>
@@ -164,7 +164,9 @@ export default function PlansPage() {
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">Small repairs included</h2>
         <p className="mt-3 max-w-2xl text-steel">
-          Inspection includes none. Essential up to {money(plans.essential.allowance)}{" "}
+          Inspection does not include repairs. If we have the materials, we can
+          do the work that visit and bill it separately. If we don’t, we quote
+          it and put you on the schedule. Essential up to {money(plans.essential.allowance)}{" "}
           in labor and materials. Preferred up to {money(plans.preferred.allowance)}{" "}
           in labor and materials. Past that amount, we price the extra work first.
           Preferred is 10% off that extra labor. Unused amount does not roll over.

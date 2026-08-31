@@ -27,11 +27,12 @@ export const plans = {
     price: 99,
     allowance: 0,
     per: "visit",
-    blurb: "House and attached garage. We inspect the roof and leave a written report with photos. No repairs on this visit. If you hire us for a new roof, the $99 comes off that job.",
+    blurb: "House and attached garage. We inspect the roof and send a dated report with photos. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule. If you hire us for a new roof, the $99 comes off that job.",
     features: [
       "House roof plus attached garage",
       "Inspection and dated report with photos",
-      "No repairs on this visit",
+      "No repairs included. Same-day work if we have the materials, billed separately.",
+      "If we don't have the materials, we quote it and put you on the schedule",
       "If we install a new roof, the $99 comes off that job",
     ],
   },
@@ -204,7 +205,7 @@ export const membershipAudience = {
   headline: "Second homes, cabins, rentals, and the house you live in.",
   paragraphs: [
     "Sublette County is a place people come to and a place people live. A lot of the roofs here are second homes, cabins, rentals, and Airbnbs. They take snow and wind whether anyone is in them or not.",
-    "If you are not here, you will not see a loose screw or a failed pipe boot. We will. Each year we inspect, leave a dated report, and do the small repairs in the plan.",
+    "If you are not here, you will not see a loose screw or a failed pipe boot. We will. Each year we inspect, send a dated report, and do the small repairs in the plan.",
     `If this is your year-round house, it is the same membership. The hard part up here is getting a contractor to actually show up. That is what the ${money(plans.inspection.price)} inspection is for. We show up.`,
   ],
 } as const;

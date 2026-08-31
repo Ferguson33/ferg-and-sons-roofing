@@ -70,7 +70,7 @@ export default function HomePage() {
               alt="Metal roof fasteners"
               kicker="Yearly"
               title="Memberships"
-              body={`Second homes, cabins, rentals, and year-round houses. Each year we inspect, leave a written report, and do small repairs up to the plan amount. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
+              body={`Second homes, cabins, rentals, and year-round houses. Each year we inspect, send a written report, and do small repairs up to the plan amount. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
               href="/plans"
               cta="See memberships"
             />
@@ -79,7 +79,7 @@ export default function HomePage() {
               alt="Ridge on an asphalt shingle roof"
               kicker={`${money(plans.inspection.price)} inspection`}
               title="Inspections and repairs"
-              body={`The ${money(plans.inspection.price)} inspection: we look at the roof and leave a written report. We do not repair anything on that visit. Small repairs are done on a yearly membership visit, up to the plan amount.`}
+              body={`The ${money(plans.inspection.price)} inspection: we look at the roof and send a written report. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule.`}
               href="/contact?need=inspection"
               cta="Request an inspection"
             />

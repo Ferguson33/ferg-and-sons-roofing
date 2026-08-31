@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="space-y-5 text-lg leading-relaxed text-steel">
           <p>
             {company.legalName} does inspections, small repairs, yearly
-            memberships, and new roofs. We inspect, do the small work, and leave
+            memberships, and new roofs. We inspect, do the small work, and send
             a written report. If the roof needs to be replaced, we quote it and
             we install it.
           </p>
