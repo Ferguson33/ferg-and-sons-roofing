@@ -56,10 +56,10 @@ export const plans = {
     price: 299,
     allowance: 200,
     per: "year",
-    blurb: "Yearly inspection, written report, and up to $200 in labor and materials. House, attached garage, and one extra building. Debris clean if the roof is safe, and 10% off extra labor after the $200.",
+    blurb: "For owners with more than one building, or a commercial property. Yearly inspection, written report, and up to $200 in labor and materials. Debris clean if the roof is safe, and 10% off extra labor after the $200.",
     features: [
       "Everything in Essential",
-      "House, attached garage, plus one additional building (detached garage, shop, or similar)",
+      "Multi-building or commercial property (several roofs, or a commercial building)",
       "Up to $200 in labor and materials",
       "Debris clean if the roof is safe",
       "10% off extra labor after the $200",
