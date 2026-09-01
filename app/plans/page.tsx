@@ -29,7 +29,7 @@ export default function PlansPage() {
       </p>
       <p className="mt-4 max-w-2xl text-lg break-words text-steel">
         Inspection / Bid and Essential cover the house and attached garage. Preferred
-        also includes one extra building — a detached garage, shop, or similar.
+        is for multi-building and commercial — several roofs, or a commercial building.
         Unused repair money does not roll over. It is not refunded.
       </p>
 
@@ -60,7 +60,7 @@ export default function PlansPage() {
           features={plans.preferred.features}
           href="/contact?plan=preferred"
           featured
-          kicker="House plus one extra building"
+          kicker="Multi-building & commercial"
         />
       </div>
 
@@ -87,7 +87,7 @@ export default function PlansPage() {
           <tbody className="text-charcoal">
             <Row label="House roof" a="Yes" b="Yes" c="Yes" />
             <Row label="Attached / connected garage" a="Yes" b="Yes" c="Yes" />
-            <Row label="Detached garage, shop, or similar" a="Quoted" b="Quoted" c="One included" />
+            <Row label="Detached garage, shop, or similar" a="Quoted" b="Quoted" c="Included — multi-building & commercial" />
             <Row label="Inspection" a="Yes" b="Yes" c="Yes" />
             <Row label="Dated report with photos" a="Yes" b="Yes" c="Yes" />
             <Row label="Labor and materials" a="Not included" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
@@ -206,7 +206,7 @@ export default function PlansPage() {
       <section className="mt-16 border border-steel-light bg-white p-6 sm:p-8">
         <h2 className="text-3xl text-charcoal">Not in the yearly price</h2>
         <ul className="mt-4 space-y-2 text-steel">
-          <li>Extra buildings past what’s included — quoted. Preferred includes one additional building.</li>
+          <li>Extra buildings past what’s included — quoted. Preferred is multi-building and commercial.</li>
           <li>Unused repair money — no rollover, no refund.</li>
           <li>A new roof or tear-off — quoted separately. If we install it, the {money(plans.inspection.price)} Inspection / Bid comes off that job.</li>
           <li>Christmas lights — extra. Yearly hang and take-down. Members get preferred pricing or a credit.</li>
