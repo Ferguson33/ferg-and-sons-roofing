@@ -11,10 +11,10 @@ export const company = {
   serviceArea: "Pinedale and other communities in Sublette County",
   yearsHere: "20+",
   mailing: {
-    line1: "PO Box 103",
-    city: "Big Piney",
+    line1: "PO Box 501",
+    city: "Pinedale",
     state: "WY",
-    zip: "83113",
+    zip: "82941",
   },
 } as const;
 
@@ -52,11 +52,12 @@ export const plans = {
     price: 299,
     allowance: 200,
     per: "year",
-    blurb: "Yearly inspection and report for several roofs, or a commercial building.",
+    blurb: "Same yearly inspection and report as Essential, sized for more than one building.",
     features: [
-      "Everything in Essential",
+      "Several roofs, or one commercial building",
       "Up to $200 in labor and materials",
       "10% off extra labor after the $200",
+      "Debris clean if the roof is safe",
     ],
   },
 } as const;
