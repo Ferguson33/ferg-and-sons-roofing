@@ -186,10 +186,10 @@ export default function HomePage() {
         </div>
 
         <div className="mt-12">
-          <h3 className="text-xl text-charcoal">Patched for three years — then a new roof</h3>
+          <h3 className="text-xl text-charcoal">A new roof</h3>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-steel">
-            We had patched this one for three years. The owner finally put a new
-            roof on. Waiting cost 10 sheets of OSB.
+            Fix a small problem before it becomes a big one. This deck had to
+            come off with the old roof.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <figure className="min-w-0">
@@ -208,13 +208,13 @@ export default function HomePage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image
                   src="/images/jobs/new-osb-deck.jpg"
-                  alt="New OSB replacing deck damaged by a delayed new roof"
+                  alt="New OSB roof deck"
                   fill
                   className="object-cover"
                   sizes="(min-width: 640px) 50vw, 100vw"
                 />
               </div>
-              <figcaption className="mt-2 text-sm text-steel">10 sheets of OSB from the wait.</figcaption>
+              <figcaption className="mt-2 text-sm text-steel">New deck.</figcaption>
             </figure>
           </div>
         </div>
