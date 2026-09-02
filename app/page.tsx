@@ -136,8 +136,8 @@ export default function HomePage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
           <Image
-            src="/images/garage.jpg"
-            alt="Detached garage roof"
+            src="/images/sample-report/01.jpg"
+            alt="Sample report photo — garage corner, metal does not meet, wood in the hole"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"
