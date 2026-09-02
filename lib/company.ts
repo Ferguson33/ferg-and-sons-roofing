@@ -68,14 +68,14 @@ export const reportSections = [
     outline: "border-[#2f6b3a] text-[#2f6b3a]",
   },
   {
-    title: "Maintenance required",
-    body: "Needs repair on this visit, if it fits the included amount.",
-    outline: "border-[#c45e12] text-[#c45e12]",
-  },
-  {
     title: "Monitor",
     body: "Not urgent. Recheck next year.",
     outline: "border-[#ca8a04] text-[#a16207]",
+  },
+  {
+    title: "Maintenance required",
+    body: "Needs repair on this visit, if it fits the included amount.",
+    outline: "border-[#c45e12] text-[#c45e12]",
   },
   {
     title: "Replacement recommended",

@@ -328,7 +328,7 @@ export default function SampleReportPage() {
               How each item is marked
             </h2>
             <p className="mt-2 text-sm text-steel">
-              Same marks we use on every visit: satisfactory, needs maintenance, monitor, or
+              Same marks we use on every visit: satisfactory, monitor, needs maintenance, or
               replace. This job also splits “replace the roof” from “repair this part now.”
             </p>
             <ul className="mt-3 grid gap-2 text-xs sm:grid-cols-2">
