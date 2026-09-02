@@ -19,12 +19,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-steel-light/80 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="min-w-0 shrink" aria-label={`${company.legalName} home`} onClick={() => setOpen(false)}>
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 xl:grid-cols-[1fr_auto_1fr]">
+        <Link
+          href="/"
+          className="min-w-0 justify-self-start"
+          aria-label={`${company.legalName} home`}
+          onClick={() => setOpen(false)}
+        >
           <Logo className="h-11 w-auto sm:h-14" priority />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
+        <nav className="hidden items-center justify-center gap-6 whitespace-nowrap xl:flex" aria-label="Main">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -36,20 +41,20 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center justify-self-end gap-4 whitespace-nowrap xl:flex">
           <a
             href={`tel:${company.tel}`}
             className="inline-flex items-center gap-2 text-base font-medium text-charcoal"
           >
-            <Phone className="h-4 w-4 text-red" />
+            <Phone className="h-4 w-4 shrink-0 text-red" />
             {displayPhone()}
           </a>
-          <Link href="/contact?need=inspection" className="btn-primary">
+          <Link href="/contact?need=inspection" className="btn-primary shrink-0">
             Request an inspection
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center justify-self-end gap-2 xl:hidden">
           <a
             href={`tel:${company.tel}`}
             className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-steel-light text-charcoal"
@@ -70,7 +75,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-steel-light bg-white px-4 py-4 lg:hidden">
+        <div className="border-t border-steel-light bg-white px-4 py-4 xl:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {links.map((link) => (
               <Link
