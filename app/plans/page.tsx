@@ -153,9 +153,9 @@ export default function PlansPage() {
           {reportSections.map((section) => (
             <article
               key={section.title}
-              className={`border-2 bg-white p-6 ${section.outline}`}
+              className={`border bg-white p-6 border-l-4 ${section.outline}`}
             >
-              <h3 className="text-xl">{section.title}</h3>
+              <h3 className="text-xl text-charcoal">{section.title}</h3>
               <p className="mt-2 text-base leading-relaxed text-steel">{section.body}</p>
             </article>
           ))}
