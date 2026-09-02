@@ -123,7 +123,7 @@ export default function HomePage() {
           <h2 className="mt-3 text-3xl text-charcoal sm:text-4xl">A written roof report after every inspection.</h2>
           <p className="mt-4 text-lg leading-relaxed text-steel">
             You keep dated photos and findings. Each item is marked
-            satisfactory, needs maintenance, monitor, or replace.
+            satisfactory, monitor, needs maintenance, or replace.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Link href="/sample-report" className="inline-flex items-center gap-2 font-medium text-red">
