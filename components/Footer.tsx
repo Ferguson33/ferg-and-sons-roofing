@@ -8,14 +8,14 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <Logo className="h-16 w-auto max-w-full rounded-sm bg-white sm:h-20" />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-steel-light">
+          <p className="mt-5 max-w-xs text-base leading-relaxed text-steel-light">
             Inspections, repairs, and yearly memberships. Cabins, rentals, and
             year-round homes. Christmas lights too.
           </p>
         </div>
         <div>
           <h2 className="font-display text-sm uppercase tracking-[0.22em] text-red">Pages</h2>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-2 text-base">
             <li><Link className="inline-block py-1.5 hover:text-red" href="/plans">Memberships</Link></li>
             <li><Link className="inline-block py-1.5 hover:text-red" href="/contact?need=inspection">Inspections</Link></li>
             <li><Link className="inline-block py-1.5 hover:text-red" href="/contact?need=bid">New roofs</Link></li>
@@ -27,7 +27,7 @@ export function Footer() {
         </div>
         <div>
           <h2 className="font-display text-sm uppercase tracking-[0.22em] text-red">Call</h2>
-          <ul className="mt-4 space-y-2 text-sm text-steel-light">
+          <ul className="mt-4 space-y-2 text-base text-steel-light">
             <li>
               Josh Ferguson
               <br />
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-6xl px-4 py-4 text-xs text-steel sm:px-6">
+        <p className="mx-auto max-w-6xl px-4 py-4 text-sm text-steel sm:px-6">
           © {new Date().getFullYear()} {company.legalName}
         </p>
       </div>

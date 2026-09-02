@@ -30,12 +30,12 @@ export default function ContactPage() {
         <a className="mt-3 block font-display text-3xl text-white" href={`tel:${company.tel}`}>
           {displayPhone()}
         </a>
-        <p className="mt-4 text-sm text-steel-light">
+        <p className="mt-4 text-base text-steel-light">
           <a className="hover:text-white" href={`mailto:${company.email}`}>
             {company.email}
           </a>
         </p>
-        <p className="mt-6 text-sm text-steel-light">{company.serviceArea}</p>
+        <p className="mt-6 text-base text-steel-light">{company.serviceArea}</p>
       </aside>
     </div>
   );

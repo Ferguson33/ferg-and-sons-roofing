@@ -29,7 +29,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-steel hover:text-charcoal"
+              className="text-base font-medium tracking-wide text-steel hover:text-charcoal"
             >
               {link.label}
             </Link>
@@ -39,12 +39,12 @@ export function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href={`tel:${company.tel}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-charcoal"
+            className="inline-flex items-center gap-2 text-base font-medium text-charcoal"
           >
             <Phone className="h-4 w-4 text-red" />
             {displayPhone()}
           </a>
-          <Link href="/contact?need=inspection" className="btn-primary text-sm">
+          <Link href="/contact?need=inspection" className="btn-primary">
             Request an inspection
           </Link>
         </div>

@@ -21,7 +21,7 @@ export default function HomePage() {
               <span className="block">Repairs</span>
               <span className="block">New roofs</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-steel">
+            <p className="mt-5 max-w-xl min-w-0 text-lg leading-relaxed break-words text-steel">
               Yearly memberships too — cabins, rentals, and year-round homes.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -154,7 +154,7 @@ export default function HomePage() {
 
         <div className="mt-10">
           <h3 className="text-xl text-charcoal">Wind damage — patched, then two new panels</h3>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-steel">
+          <p className="mt-2 max-w-2xl text-base leading-relaxed text-steel">
             Wind lifted metal. We patched it, came back, and replaced two panels.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -187,7 +187,7 @@ export default function HomePage() {
 
         <div className="mt-12">
           <h3 className="text-xl text-charcoal">A new roof</h3>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-steel">
+          <p className="mt-2 max-w-2xl text-base leading-relaxed text-steel">
             Fix a small problem before it becomes a big one. This deck had to
             come off with the old roof.
           </p>
@@ -268,8 +268,8 @@ function ServiceCard({
       <div className="flex flex-1 flex-col p-6">
         <p className="font-display text-xs uppercase tracking-[0.22em] text-red">{kicker}</p>
         <h3 className="mt-2 text-2xl text-charcoal">{title}</h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-steel">{body}</p>
-        <Link href={href} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-red">
+        <p className="mt-3 flex-1 text-base leading-relaxed text-steel">{body}</p>
+        <Link href={href} className="mt-6 inline-flex items-center gap-2 text-base font-medium text-red">
           {cta} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

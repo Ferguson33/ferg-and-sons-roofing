@@ -262,7 +262,7 @@ export default function SampleReportPage() {
           </dl>
 
           <section className="mt-8">
-            <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">
+            <h2 className="font-display text-xs uppercase tracking-[0.22em] text-red">
               What I found
             </h2>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-charcoal">
@@ -324,7 +324,7 @@ export default function SampleReportPage() {
           </section>
 
           <section className="mt-8">
-            <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">
+            <h2 className="font-display text-xs uppercase tracking-[0.22em] text-red">
               How each item is marked
             </h2>
             <p className="mt-2 text-sm text-steel">
@@ -360,14 +360,14 @@ export default function SampleReportPage() {
           </section>
 
           <section className="mt-8">
-            <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">
+            <h2 className="font-display text-xs uppercase tracking-[0.22em] text-red">
               Items
             </h2>
             <div className="mt-4 space-y-4">
               {findings.map((item) => (
                 <article key={item.title} className="border border-steel-light bg-white p-4 sm:p-5">
                   <p className="flex flex-wrap items-center gap-2">
-                    <span className={`inline-block px-2 py-0.5 text-[0.65rem] font-display uppercase tracking-wider ${markClass[item.mark]}`}>
+                    <span className={`inline-block px-2 py-0.5 text-xs font-display uppercase tracking-wider ${markClass[item.mark]}`}>
                       {markLabel[item.mark]}
                     </span>
                     <span className="font-medium text-charcoal">{item.title}</span>
@@ -384,7 +384,7 @@ export default function SampleReportPage() {
           </section>
 
           <section className="mt-8">
-            <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">
+            <h2 className="font-display text-xs uppercase tracking-[0.22em] text-red">
               Work to bid
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-steel">
@@ -400,7 +400,7 @@ export default function SampleReportPage() {
           </section>
 
           <section className="mt-8">
-            <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">
+            <h2 className="font-display text-xs uppercase tracking-[0.22em] text-red">
               Limitations
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-steel">
@@ -413,7 +413,7 @@ export default function SampleReportPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="font-display text-[0.65rem] uppercase tracking-[0.22em] text-red">
+            <h2 className="font-display text-xs uppercase tracking-[0.22em] text-red">
               Photos
             </h2>
             <p className="mt-2 text-sm text-steel">
@@ -449,7 +449,7 @@ export default function SampleReportPage() {
             {displayPhone()}
           </p>
 
-          <p className="mt-8 text-center text-[0.7rem] uppercase tracking-[0.16em] text-steel">
+          <p className="mt-8 text-center text-xs uppercase tracking-[0.16em] text-steel">
             Example. Address withheld. This report documents condition on the date of inspection.
             It is not a warranty. The bid is separate.
           </p>
@@ -474,7 +474,7 @@ export default function SampleReportPage() {
 function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid border-b border-steel-light last:border-b-0 sm:grid-cols-[11rem_1fr]">
-      <dt className="bg-charcoal px-3 py-2 text-[0.7rem] font-display uppercase tracking-[0.12em] text-white">
+      <dt className="bg-charcoal px-3 py-2 text-xs font-display uppercase tracking-[0.12em] text-white">
         {label}
       </dt>
       <dd className="px-3 py-2 text-sm break-words text-charcoal">{value}</dd>

@@ -49,7 +49,7 @@ export default function ProblemsPage() {
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-xl text-charcoal">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-steel">{item.body}</p>
+                <p className="mt-2 text-base leading-relaxed text-steel">{item.body}</p>
               </div>
             </li>
           ))}
@@ -76,7 +76,7 @@ export default function ProblemsPage() {
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="text-xl text-charcoal">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-steel">{item.body}</p>
+                <p className="mt-2 text-base leading-relaxed text-steel">{item.body}</p>
               </div>
             </li>
           ))}
@@ -85,7 +85,7 @@ export default function ProblemsPage() {
           {replacementText.map((item) => (
             <li key={item.title} className="border-l-2 border-charcoal pl-4">
               <h3 className="text-xl text-charcoal">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel">{item.body}</p>
+              <p className="mt-2 text-base leading-relaxed text-steel">{item.body}</p>
             </li>
           ))}
         </ul>
