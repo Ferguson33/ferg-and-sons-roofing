@@ -70,7 +70,7 @@ export default function HomePage() {
               alt="Metal roof fasteners"
               kicker="Yearly"
               title="Memberships"
-              body={`Second homes, cabins, rentals, and year-round houses. Each year we inspect, send a written report, and do small repairs up to the plan amount. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, which also covers one extra building.`}
+              body={`Second homes, cabins, rentals, and year-round houses. Each year we inspect, send a written report, and do small repairs up to the plan amount. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, for multi-building and commercial.`}
               href="/plans"
               cta="See memberships"
             />
