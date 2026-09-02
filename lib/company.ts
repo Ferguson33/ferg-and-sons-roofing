@@ -171,12 +171,32 @@ export const maintenanceIssues = [
       alt: "Gap down the rake where water can get behind the metal onto the fascia",
     },
   },
+  {
+    title: "A few missing or lifted shingles",
+    body: "One wind event can peel a handful. Replacing them protects the underlayment while the rest of the roof is still sound.",
+    photo: {
+      src: "/images/problems/lifted-shingles.jpg",
+      alt: "Gray asphalt shingles lifted and slipping out of course",
+    },
+  },
 ] as const;
 
 export const replacementIssues = [
   {
     title: "The shingles are worn out across the roof",
-    body: "Curling, bald spots, widespread granule loss. Patching a roof that is done wastes money. It needs to come off.",
+    body: "Cracks through the tabs, curling, bald spots. Patching a roof that is done wastes money. It needs to come off.",
+    photo: {
+      src: "/images/problems/worn-shingle-field.jpg",
+      alt: "Brown asphalt shingles cracked across the field",
+    },
+  },
+  {
+    title: "Storm damage past a patch",
+    body: "A few shingles are maintenance. A panel gone, or a whole slope blown off, is replacement work.",
+    photo: {
+      src: "/images/problems/storm-missing-panel.jpg",
+      alt: "Metal roof with a panel torn off and plywood showing",
+    },
   },
   {
     title: "The deck is rotten, or there are already too many layers",
@@ -193,10 +213,6 @@ export const replacementIssues = [
   {
     title: "Metal panels rusted through or the coating is gone",
     body: "Loose screws are maintenance. Panels that have failed are a new roof.",
-  },
-  {
-    title: "Storm damage past a patch",
-    body: "A few shingles are maintenance. Whole slopes or broken structure is replacement work.",
   },
   {
     title: "The roof is at the end of its service life",

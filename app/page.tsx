@@ -47,8 +47,8 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
             <Image
-              src="/images/winter.jpg"
-              alt="Snow on residential roofs in the mountains"
+              src="/images/jobs/metal-panels-in.jpg"
+              alt="Green metal panels fastened on a roof"
               fill
               priority
               className="object-cover"
@@ -66,8 +66,8 @@ export default function HomePage() {
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <ServiceCard
-              image="/images/fasteners.jpg"
-              alt="Metal roof fasteners"
+              image="/images/sample-report/06.jpg"
+              alt="Screw standing up on a metal roof, threads showing"
               kicker="Yearly"
               title="Memberships"
               body={`Second homes, cabins, rentals, and year-round houses. Each year we inspect, send a written report, and do small repairs up to the plan amount. Essential ${money(plans.essential.price)}. Preferred ${money(plans.preferred.price)}, for multi-building and commercial.`}
@@ -75,8 +75,8 @@ export default function HomePage() {
               cta="See memberships"
             />
             <ServiceCard
-              image="/images/ridge.jpg"
-              alt="Ridge on an asphalt shingle roof"
+              image="/images/sample-report/03.jpg"
+              alt="Vent boot with peeling mastic, photographed on an inspection"
               kicker={`${money(plans.inspection.price)} / visit`}
               title="Inspection / Bid"
               body={`The ${money(plans.inspection.price)} Inspection / Bid: we look at the roof and send a written report. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule. If the roof needs to come off, we bid it.`}
@@ -84,8 +84,8 @@ export default function HomePage() {
               cta="Request Inspection / Bid"
             />
             <ServiceCard
-              image="/images/hero.jpg"
-              alt="Ranch house with a roof on sagebrush ground"
+              image="/images/jobs/new-osb-deck.jpg"
+              alt="New OSB roof deck on a replacement job"
               kicker="Replacement"
               title="New roofs"
               body={`If the roof needs to be replaced, we quote the job and we install it. Hire us for the new roof and the ${money(plans.inspection.price)} Inspection / Bid comes off that price.`}
@@ -97,7 +97,7 @@ export default function HomePage() {
       </section>
 
       <section id="who-its-for" className="scroll-mt-24 mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <MembershipAudience withImage />
+        <MembershipAudience />
       </section>
 
       <section id="christmas-lights" className="scroll-mt-24 border-y border-steel-light bg-paper">
@@ -146,11 +146,60 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <p className="font-display text-xs uppercase tracking-[0.28em] text-red">Job photos</p>
-        <h2 className="mt-3 text-3xl text-charcoal">Photos from finished jobs will go here.</h2>
+        <p className="font-display text-xs uppercase tracking-[0.28em] text-red">On the job</p>
+        <h2 className="mt-3 text-3xl text-charcoal">Tear-off, new deck, metal going on.</h2>
+        <p className="mt-3 max-w-2xl text-steel">
+          Finished roofs will go here too.
+        </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <div className="placeholder-frame">Completed work</div>
-          <div className="placeholder-frame">Before and after</div>
+          <figure className="min-w-0">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image
+                src="/images/jobs/tearoff-deck.jpg"
+                alt="Tear-off: open rafters, insulation, and new deck"
+                fill
+                className="object-cover"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+            </div>
+            <figcaption className="mt-2 text-sm text-steel">Tear-off. Deck and insulation open.</figcaption>
+          </figure>
+          <figure className="min-w-0">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image
+                src="/images/jobs/new-osb-deck.jpg"
+                alt="New OSB roof deck on a job"
+                fill
+                className="object-cover"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+            </div>
+            <figcaption className="mt-2 text-sm text-steel">New deck going down.</figcaption>
+          </figure>
+          <figure className="min-w-0">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image
+                src="/images/jobs/metal-underlayment.jpg"
+                alt="Green metal roof with underlayment patches and screws on the panel"
+                fill
+                className="object-cover"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+            </div>
+            <figcaption className="mt-2 text-sm text-steel">Metal. Patches in, screws on the roof.</figcaption>
+          </figure>
+          <figure className="min-w-0">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image
+                src="/images/jobs/metal-panels-in.jpg"
+                alt="Green standing-seam metal panels fastened on a roof"
+                fill
+                className="object-cover"
+                sizes="(min-width: 640px) 50vw, 100vw"
+              />
+            </div>
+            <figcaption className="mt-2 text-sm text-steel">Panels on.</figcaption>
+          </figure>
         </div>
       </section>
 

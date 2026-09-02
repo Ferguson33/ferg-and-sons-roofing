@@ -40,8 +40,8 @@ export default function AboutPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
           <Image
-            src="/images/hero.jpg"
-            alt="Ranch house on sagebrush ground in front of the Wind River Range"
+            src="/images/jobs/tearoff-deck.jpg"
+            alt="Tear-off on a job: open rafters, insulation, and new deck"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"

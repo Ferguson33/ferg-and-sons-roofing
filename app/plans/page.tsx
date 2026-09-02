@@ -134,8 +134,8 @@ export default function PlansPage() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
           <Image
-            src="/images/ridge.jpg"
-            alt="Ridge on an asphalt shingle roof"
+            src="/images/sample-report/03.jpg"
+            alt="Vent boot photographed during an inspection"
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"
