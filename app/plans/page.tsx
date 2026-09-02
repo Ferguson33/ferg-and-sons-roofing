@@ -28,8 +28,8 @@ export default function PlansPage() {
         We show up.
       </p>
       <p className="mt-4 max-w-2xl text-lg break-words text-steel">
-        Inspection / Bid and Essential cover the house and attached garage. Preferred
-        is for multi-building and commercial — several roofs, or a commercial building.
+        Inspection / Bid and Essential cover the house and attached garage.
+        Preferred steps up when you have more than one roof to cover.
         Unused repair money does not roll over. It is not refunded.
       </p>
 
