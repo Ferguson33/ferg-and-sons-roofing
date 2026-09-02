@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { maintenanceIssues, replacementIssues } from "@/lib/company";
 
@@ -26,28 +27,34 @@ export default function ProblemsPage() {
         <h2 className="text-3xl text-charcoal">Addressed with maintenance</h2>
         <p className="mt-3 max-w-2xl text-steel">
           Left alone, these get worse and the roof wears out faster. A yearly
-          visit catches them.
+          visit catches them. Photos are from a real Inspection / Bid.
         </p>
-        <ul className="mt-8 grid gap-6 lg:grid-cols-2">
+        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {maintenanceIssues.map((item) => (
-            <li key={item.title} className="border-l-2 border-red pl-4">
-              <h3 className="text-xl text-charcoal">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel">{item.body}</p>
+            <li key={item.title} className="flex min-w-0 flex-col border border-steel-light bg-white">
+              <div className="relative aspect-[3/4] overflow-hidden bg-paper">
+                <Image
+                  src={item.photo.src}
+                  alt={item.photo.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="text-xl text-charcoal">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-steel">{item.body}</p>
+              </div>
             </li>
           ))}
         </ul>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <div className="placeholder-frame">Maintenance photo</div>
-          <div className="placeholder-frame">Maintenance photo</div>
-          <div className="placeholder-frame">Maintenance photo</div>
-        </div>
       </section>
 
       <section className="mt-16">
         <h2 className="text-3xl text-charcoal">Needs a new roof</h2>
         <p className="mt-3 max-w-2xl text-steel">
           Patching these wastes money. We won’t sell another year of repairs on a
-          roof that should come off.
+          roof that should come off. Photos from tear-off jobs will go here.
         </p>
         <ul className="mt-8 grid gap-6 lg:grid-cols-2">
           {replacementIssues.map((item) => (
@@ -57,11 +64,6 @@ export default function ProblemsPage() {
             </li>
           ))}
         </ul>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <div className="placeholder-frame">Replacement photo</div>
-          <div className="placeholder-frame">Replacement photo</div>
-          <div className="placeholder-frame">Replacement photo</div>
-        </div>
       </section>
 
       <div className="mt-12 flex flex-wrap gap-3">

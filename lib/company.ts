@@ -125,35 +125,51 @@ export const inspectionChecklist = [
 export const maintenanceIssues = [
   {
     title: "Failed pipe-boot sealant",
-    body: "Caulk cracks, pulls away, and water follows the pipe. Resealing it is one of the more common fixes, and it stops a leak before it hits the ceiling.",
+    body: "Caulk cracks, pulls away, and water follows the pipe. On metal, a shingle-style boot does not sit on the ribs. Resealing or replacing the boot stops a leak before it hits the ceiling.",
+    photo: {
+      src: "/images/sample-report/03.jpg",
+      alt: "Vent boot with peeling asphalt sheet and mastic, needles under the edge",
+    },
   },
   {
     title: "Loose screws on metal roofs",
-    body: "Wind backs fasteners out. Tightening or replacing them keeps the panel from working loose and leaking.",
-  },
-  {
-    title: "A few missing or lifted shingles",
-    body: "One wind event can peel a handful. Replacing them protects the underlayment while the rest of the roof is still sound.",
+    body: "Wind backs fasteners out. Some stand up with the threads showing. Some holes are empty. Tightening or replacing them keeps the panel from working loose and leaking.",
+    photo: {
+      src: "/images/sample-report/06.jpg",
+      alt: "Screw standing up near the eave, threads showing, washer not tight",
+    },
   },
   {
     title: "Failed sealant on flashing",
-    body: "A short run of cracked caulk at a wall, chimney, or roof join. Resealing it is maintenance. Rebuilding the flashing is not.",
+    body: "Old mastic around a chimney jack or flashing collar cracks and pulls back. Resealing or resetting it is maintenance. Rebuilding the flashing is not.",
+    photo: {
+      src: "/images/sample-report/04.jpg",
+      alt: "Chimney jack with old mastic cracked and pulled back",
+    },
   },
   {
-    title: "Loose pipe-jack or flashing screws",
-    body: "Screws around pipes and flashing work out the same way metal-roof fasteners do. They get tightened or replaced on the visit.",
+    title: "Missing flashing at a wall or corner",
+    body: "The metal runs to the siding and stops, or a corner does not close and you can see wood. Water goes straight in. Proper flashing kicks it out onto the panel, not under it.",
+    photo: {
+      src: "/images/sample-report/01.jpg",
+      alt: "Garage corner where the metal does not meet and wood shows in the hole",
+    },
   },
   {
     title: "Debris in valleys and at the eaves",
-    body: "Needles, leaves, and dirt hold water and snow. Clearing it (Preferred, when the roof is safe) keeps ice and rot from starting there.",
+    body: "Needles, cones, and dirt hold water and snow. Clearing it (Preferred, when the roof is safe) keeps ice and rot from starting there.",
+    photo: {
+      src: "/images/sample-report/12.jpg",
+      alt: "Valley with a poor cut and needles, cones, and sticks in the waterway",
+    },
   },
   {
-    title: "Exposed or backing nails",
-    body: "A nail popping through a shingle is a small hole. Sealed or reset early, it is not a leak yet.",
-  },
-  {
-    title: "Early ice at the eaves",
-    body: "Ice dams come from weather. Clogged drainage and weak spots at the eave make them worse. We cannot heat the attic. We can catch the damage ice does to the roof.",
+    title: "Gap behind gable trim",
+    body: "If the rake trim sits off the panel, snow and water get on the wood fascia. Fasten it so the gap is closed. A tree-hit piece gets replaced.",
+    photo: {
+      src: "/images/sample-report/10.jpg",
+      alt: "Gap down the rake where water can get behind the metal onto the fascia",
+    },
   },
 ] as const;
 
