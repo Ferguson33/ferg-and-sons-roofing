@@ -147,59 +147,76 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="font-display text-xs uppercase tracking-[0.28em] text-red">On the job</p>
-        <h2 className="mt-3 text-3xl text-charcoal">Tear-off, new deck, metal going on.</h2>
+        <h2 className="mt-3 text-3xl text-charcoal">Two different houses.</h2>
         <p className="mt-3 max-w-2xl text-steel">
           Finished roofs will go here too.
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <figure className="min-w-0">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image
-                src="/images/jobs/tearoff-deck.jpg"
-                alt="Tear-off: open rafters, insulation, and new deck"
-                fill
-                className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <figcaption className="mt-2 text-sm text-steel">Tear-off. Deck and insulation open.</figcaption>
-          </figure>
-          <figure className="min-w-0">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image
-                src="/images/jobs/new-osb-deck.jpg"
-                alt="New OSB roof deck on a job"
-                fill
-                className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <figcaption className="mt-2 text-sm text-steel">New deck going down.</figcaption>
-          </figure>
-          <figure className="min-w-0">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image
-                src="/images/jobs/metal-underlayment.jpg"
-                alt="Green metal roof with underlayment patches and screws on the panel"
-                fill
-                className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <figcaption className="mt-2 text-sm text-steel">Metal. Patches in, screws on the roof.</figcaption>
-          </figure>
-          <figure className="min-w-0">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-              <Image
-                src="/images/jobs/metal-panels-in.jpg"
-                alt="Green standing-seam metal panels fastened on a roof"
-                fill
-                className="object-cover"
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <figcaption className="mt-2 text-sm text-steel">Panels on.</figcaption>
-          </figure>
+
+        <div className="mt-10">
+          <h3 className="text-xl text-charcoal">Wind damage — patched, then two new panels</h3>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-steel">
+            Wind lifted metal. We patched it, came back, and replaced two panels.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <figure className="min-w-0">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src="/images/jobs/metal-underlayment.jpg"
+                  alt="Green metal roof patched with underlayment after wind damage"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-2 text-sm text-steel">The patch.</figcaption>
+            </figure>
+            <figure className="min-w-0">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src="/images/jobs/metal-panels-in.jpg"
+                  alt="Two replacement panels on a green metal roof"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-2 text-sm text-steel">Two panels replaced.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <h3 className="text-xl text-charcoal">Patched for three years — then a new roof</h3>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-steel">
+            We had patched this one for three years. The owner finally put a new
+            roof on. Waiting cost 10 sheets of OSB.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <figure className="min-w-0">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src="/images/jobs/tearoff-deck.jpg"
+                  alt="Tear-off: open rafters, insulation, and deck"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-2 text-sm text-steel">Tear-off.</figcaption>
+            </figure>
+            <figure className="min-w-0">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image
+                  src="/images/jobs/new-osb-deck.jpg"
+                  alt="New OSB replacing deck damaged by a delayed new roof"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-2 text-sm text-steel">10 sheets of OSB from the wait.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
