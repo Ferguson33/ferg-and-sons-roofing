@@ -65,22 +65,22 @@ export const reportSections = [
   {
     title: "Satisfactory",
     body: "No work needed.",
-    outline: "border-[#2f6b3a] text-[#2f6b3a]",
+    outline: "border-[#2f6b3a]",
   },
   {
     title: "Monitor",
     body: "Not urgent. Recheck next year.",
-    outline: "border-[#ca8a04] text-[#a16207]",
+    outline: "border-[#ca8a04]",
   },
   {
     title: "Maintenance required",
     body: "Needs repair on this visit, if it fits the included amount.",
-    outline: "border-[#c45e12] text-[#c45e12]",
+    outline: "border-[#c45e12]",
   },
   {
     title: "Replacement recommended",
     body: "The roof needs to be replaced. We quote it and we install it.",
-    outline: "border-red text-red",
+    outline: "border-red",
   },
 ] as const;
 
