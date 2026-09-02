@@ -27,13 +27,11 @@ export const plans = {
     price: 99,
     allowance: 0,
     per: "visit",
-    blurb: "House and attached garage. We inspect the roof and send a dated report with photos. No repairs included. If we have the materials, we can do the work that day. If we don't, we quote it and put you on the schedule. If the roof needs to be replaced, we quote it. If you hire us for a new roof, the $99 comes off that job.",
+    blurb: "We inspect the roof and send a dated report with photos. No repairs in the price.",
     features: [
-      "House roof plus attached garage",
-      "Dated report with photos. A bid when the roof needs to come off.",
-      "No repairs included. Same-day work if we have the materials, billed separately.",
-      "If we don't have the materials, we quote it and put you on the schedule",
-      "If we install a new roof, the $99 comes off that job",
+      "House and attached garage",
+      "Same-day work if we have the materials, billed separately",
+      "A bid if the roof needs to come off",
     ],
   },
   essential: {
@@ -42,13 +40,10 @@ export const plans = {
     price: 199,
     allowance: 100,
     per: "year",
-    blurb: "Yearly inspection, written report, and up to $100 in labor and materials. House and attached garage. Debris clean if the roof is safe.",
+    blurb: "Yearly inspection and report. House and attached garage.",
     features: [
-      "Yearly inspection and dated report with photos",
-      "House roof plus attached garage",
       "Up to $100 in labor and materials",
       "Debris clean if the roof is safe",
-      "If we install a new roof, the $99 Inspection / Bid comes off that job",
     ],
   },
   preferred: {
@@ -57,13 +52,11 @@ export const plans = {
     price: 299,
     allowance: 200,
     per: "year",
-    blurb: "For owners with more than one building, or a commercial property. Yearly inspection, written report, and up to $200 in labor and materials. Debris clean if the roof is safe, and 10% off extra labor after the $200.",
+    blurb: "Yearly inspection and report for several roofs, or a commercial building.",
     features: [
       "Everything in Essential",
-      "Multi-building or commercial property (several roofs, or a commercial building)",
       "Up to $200 in labor and materials",
       "10% off extra labor after the $200",
-      "If we install a new roof, the $99 Inspection / Bid comes off that job",
     ],
   },
 } as const;
