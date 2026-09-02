@@ -19,42 +19,45 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-steel-light/80 bg-white/95 backdrop-blur">
-      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 xl:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="min-w-0 justify-self-start"
+          className="min-w-0 shrink-0"
           aria-label={`${company.legalName} home`}
           onClick={() => setOpen(false)}
         >
-          <Logo className="h-11 w-auto sm:h-14" priority />
+          <Logo className="h-11 w-auto" priority />
         </Link>
 
-        <nav className="hidden items-center justify-center gap-6 whitespace-nowrap xl:flex" aria-label="Main">
+        <nav
+          className="hidden min-w-0 flex-1 items-center justify-center gap-3 whitespace-nowrap lg:flex xl:gap-5"
+          aria-label="Main"
+        >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-base font-medium tracking-wide text-steel hover:text-charcoal"
+              className="text-sm font-medium text-steel hover:text-charcoal"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center justify-self-end gap-4 whitespace-nowrap xl:flex">
+        <div className="hidden shrink-0 items-center gap-3 whitespace-nowrap lg:flex">
           <a
             href={`tel:${company.tel}`}
-            className="inline-flex items-center gap-2 text-base font-medium text-charcoal"
+            className="inline-flex items-center gap-2 text-sm font-medium text-charcoal"
           >
             <Phone className="h-4 w-4 shrink-0 text-red" />
             {displayPhone()}
           </a>
-          <Link href="/contact?need=inspection" className="btn-primary shrink-0">
+          <Link href="/contact?need=inspection" className="btn-primary shrink-0 px-4 py-2 text-base">
             Request an inspection
           </Link>
         </div>
 
-        <div className="flex items-center justify-self-end gap-2 xl:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a
             href={`tel:${company.tel}`}
             className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-steel-light text-charcoal"
@@ -75,7 +78,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-steel-light bg-white px-4 py-4 xl:hidden">
+        <div className="border-t border-steel-light bg-white px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {links.map((link) => (
               <Link
