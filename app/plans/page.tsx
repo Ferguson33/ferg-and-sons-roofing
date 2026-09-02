@@ -70,16 +70,16 @@ export default function PlansPage() {
         <table className="w-full min-w-[36rem] text-left text-sm">
           <thead>
             <tr className="border-b border-steel-light">
-              <th className="py-3 pr-4 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
+              <th className="py-3 pr-4 font-display text-xs uppercase tracking-[0.16em] text-steel">
                 Included
               </th>
-              <th className="py-3 pr-4 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
+              <th className="py-3 pr-4 font-display text-xs uppercase tracking-[0.16em] text-steel">
                 Inspection / Bid {money(plans.inspection.price)}
               </th>
-              <th className="py-3 pr-4 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
+              <th className="py-3 pr-4 font-display text-xs uppercase tracking-[0.16em] text-steel">
                 Essential {money(plans.essential.price)}
               </th>
-              <th className="py-3 font-display text-[0.65rem] uppercase tracking-[0.16em] text-steel">
+              <th className="py-3 font-display text-xs uppercase tracking-[0.16em] text-steel">
                 Preferred {money(plans.preferred.price)}
               </th>
             </tr>
@@ -92,7 +92,7 @@ export default function PlansPage() {
             <Row label="Dated report with photos" a="Yes" b="Yes" c="Yes" />
             <Row label="Labor and materials" a="Not included" b={`Up to ${money(plans.essential.allowance)}`} c={`Up to ${money(plans.preferred.allowance)}`} />
             <Row label="Unused repair money" a="—" b="Does not roll over" c="Does not roll over" />
-            <Row label="Debris clean if the roof is safe" a="No" b="No" c="Yes" />
+            <Row label="Debris clean if the roof is safe" a="No" b="Yes" c="Yes" />
             <Row label="Work past the included amount" a="Priced before work" b="Priced before work" c="10% off that labor" />
             <Row label="Tear-off or new roof" a="Quoted separately" b="Quoted separately" c="Quoted separately" />
             <Row
@@ -113,8 +113,8 @@ export default function PlansPage() {
           Inspection / Bid is not a repair visit. If we have the materials, we
           can do the work that day. If we don’t, we quote it and put you on the
           schedule. If the roof needs to come off, we bid it. Essential and
-          Preferred include labor and materials up to the plan amount. Preferred
-          adds a debris clean if the roof is safe.
+          Preferred include labor and materials up to the plan amount, and a
+          debris clean if the roof is safe.
         </p>
       </section>
 
@@ -151,9 +151,12 @@ export default function PlansPage() {
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {reportSections.map((section) => (
-            <article key={section.title} className="border border-steel-light bg-white p-6">
-              <h3 className="text-xl text-charcoal">{section.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-steel">{section.body}</p>
+            <article
+              key={section.title}
+              className={`border-2 bg-white p-6 ${section.outline}`}
+            >
+              <h3 className="text-xl">{section.title}</h3>
+              <p className="mt-2 text-base leading-relaxed text-steel">{section.body}</p>
             </article>
           ))}
         </div>

@@ -42,11 +42,12 @@ export const plans = {
     price: 199,
     allowance: 100,
     per: "year",
-    blurb: "Yearly inspection, written report, and up to $100 in labor and materials. House and attached garage.",
+    blurb: "Yearly inspection, written report, and up to $100 in labor and materials. House and attached garage. Debris clean if the roof is safe.",
     features: [
       "Yearly inspection and dated report with photos",
       "House roof plus attached garage",
       "Up to $100 in labor and materials",
+      "Debris clean if the roof is safe",
       "If we install a new roof, the $99 Inspection / Bid comes off that job",
     ],
   },
@@ -61,7 +62,6 @@ export const plans = {
       "Everything in Essential",
       "Multi-building or commercial property (several roofs, or a commercial building)",
       "Up to $200 in labor and materials",
-      "Debris clean if the roof is safe",
       "10% off extra labor after the $200",
       "If we install a new roof, the $99 Inspection / Bid comes off that job",
     ],
@@ -72,18 +72,22 @@ export const reportSections = [
   {
     title: "Satisfactory",
     body: "No work needed.",
+    outline: "border-[#2f6b3a] text-[#2f6b3a]",
   },
   {
     title: "Maintenance required",
     body: "Needs repair on this visit, if it fits the included amount.",
+    outline: "border-[#c45e12] text-[#c45e12]",
   },
   {
     title: "Monitor",
     body: "Not urgent. Recheck next year.",
+    outline: "border-[#ca8a04] text-[#a16207]",
   },
   {
     title: "Replacement recommended",
     body: "The roof needs to be replaced. We quote it and we install it.",
+    outline: "border-red text-red",
   },
 ] as const;
 
@@ -157,7 +161,7 @@ export const maintenanceIssues = [
   },
   {
     title: "Debris in valleys and at the eaves",
-    body: "Needles, cones, and dirt hold water and snow. Clearing it (Preferred, when the roof is safe) keeps ice and rot from starting there.",
+    body: "Needles, cones, and dirt hold water and snow. Clearing it (Essential and Preferred, when the roof is safe) keeps ice and rot from starting there.",
     photo: {
       src: "/images/sample-report/12.jpg",
       alt: "Valley with a poor cut and needles, cones, and sticks in the waterway",
