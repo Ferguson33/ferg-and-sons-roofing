@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Oswald, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
 import { PwaRegister } from "@/components/PwaRegister";
 import { company } from "@/lib/company";
 import "./globals.css";
@@ -20,7 +21,7 @@ const source = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ferg-and-sons-roofing.vercel.app"),
+  metadataBase: new URL(company.siteUrl),
   title: {
     default: `${company.legalName} · Inspections, repairs, and new roofs`,
     template: `%s · ${company.legalName}`,
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${oswald.variable} ${source.variable} h-full antialiased`}>
       <body className="flex min-h-full min-w-0 flex-col overflow-x-clip font-sans">
+        <LocalBusinessJsonLd />
         <PwaRegister />
         <Header />
         <main className="min-w-0 flex-1 overflow-x-clip">{children}</main>

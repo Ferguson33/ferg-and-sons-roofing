@@ -1,6 +1,7 @@
 export const company = {
   legalName: "Ferg & Sons Roofing, LLC",
   shortName: "Ferg & Sons Roofing",
+  siteUrl: "https://ferg-and-sons-roofing.vercel.app",
   tagline:
     "Inspections, repairs, and yearly memberships in Sublette County — second homes, cabins, rentals, and year-round houses.",
   email: "FergandSonsRoofingLLC@gmail.com",
