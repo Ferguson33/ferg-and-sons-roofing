@@ -126,6 +126,19 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("send-failed");
+
+      const { _gotcha: _ignoredGotcha, _subject: _ignoredSubject, ...leadFields } = payload;
+      void fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ ...leadFields, source: "web" }),
+      }).catch(() => {
+        /* fire-and-forget; Formspree already succeeded */
+      });
+
       resetForm();
       setStatus("sent");
     } catch {

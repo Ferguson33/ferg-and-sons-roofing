@@ -14,6 +14,8 @@ GitHub: https://github.com/Ferguson33/ferg-and-sons-roofing
 
 Local: `npm run dev` → http://localhost:3001 (`/sample-report` is an example only).
 
+Production Vercel must set `LEAD_WEBHOOK_URL` to the Grok Bot routine "Ferg web lead" webhook URL from the routine panel (optional; contact form still emails via Formspree without it).
+
 ## Job documents
 
 Office folder: `Desktop/Ferg and Sons Roofing documents/`
