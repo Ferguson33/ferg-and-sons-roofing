@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { MembershipAudience } from "@/components/MembershipAudience";
 import { company, displayPhone, money, plans } from "@/lib/company";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
@@ -148,9 +153,6 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <p className="font-display text-xs uppercase tracking-[0.28em] text-red">On the job</p>
         <h2 className="mt-3 text-3xl text-charcoal">Two different houses.</h2>
-        <p className="mt-3 max-w-2xl text-steel">
-          Finished roofs will go here too.
-        </p>
 
         <div className="mt-10">
           <h3 className="text-xl text-charcoal">Wind damage — patched, then two new panels</h3>
@@ -225,7 +227,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl">Call for an inspection / bid, a membership, or a new roof.</h2>
             <p className="mt-2 text-steel-light">
-              {company.owner} · {displayPhone()} · {company.serviceArea}
+              {company.owner} · {displayPhone()} · {company.insured} · {company.serviceArea}
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

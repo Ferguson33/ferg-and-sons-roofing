@@ -1,7 +1,7 @@
 export const company = {
   legalName: "Ferg & Sons Roofing, LLC",
   shortName: "Ferg & Sons Roofing",
-  siteUrl: "https://ferg-and-sons-roofing.vercel.app",
+  siteUrl: "https://fergandsonsroofing.com",
   tagline:
     "Inspections, repairs, and yearly memberships in Sublette County — second homes, cabins, rentals, and year-round houses.",
   email: "FergandSonsRoofingLLC@gmail.com",
@@ -9,8 +9,9 @@ export const company = {
   phone: "307-231-6026",
   tel: "+13072316026",
   owner: "Josh Ferguson",
-  serviceArea: "Pinedale and other communities in Sublette County",
+  serviceArea: "Pinedale, Marbleton, Big Piney, Daniel, and all of Sublette County",
   yearsHere: "20+",
+  insured: "Fully insured",
   mailing: {
     line1: "PO Box 501",
     city: "Pinedale",

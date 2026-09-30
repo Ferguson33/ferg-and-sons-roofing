@@ -4,6 +4,7 @@ import Link from "next/link";
 import { maintenanceIssues, replacementIssues } from "@/lib/company";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/problems" },
   title: "Common problems",
   description:
     "Roof issues that yearly maintenance can address, and issues that mean the roof needs to come off.",

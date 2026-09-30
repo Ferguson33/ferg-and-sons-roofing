@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { company, displayPhone } from "@/lib/company";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description: `Request an inspection / bid. Call ${company.owner} at ${displayPhone()}. ${company.serviceArea}.`,
 };
@@ -30,12 +31,13 @@ export default function ContactPage() {
         <a className="mt-3 block font-display text-3xl text-white" href={`tel:${company.tel}`}>
           {displayPhone()}
         </a>
-        <p className="mt-4 text-base text-steel-light">
+        <p className="mt-4 text-xs [overflow-wrap:anywhere] text-steel-light">
           <a className="hover:text-white" href={`mailto:${company.email}`}>
             {company.email}
           </a>
         </p>
-        <p className="mt-6 text-base text-steel-light">{company.serviceArea}</p>
+        <p className="mt-6 text-base font-medium text-white">{company.insured}</p>
+        <p className="mt-2 text-base text-steel-light">{company.serviceArea}</p>
       </aside>
     </div>
   );

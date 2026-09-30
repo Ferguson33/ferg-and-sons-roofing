@@ -1,10 +1,10 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { company, plans } from "@/lib/company";
 
-const roofTypes = ["Metal", "Asphalt", "Other"] as const;
+const roofTypes = ["Metal", "Asphalt", "Other", "Not sure"] as const;
 const propertyKinds = [
   "Year-round home",
   "Second home or cabin",
@@ -50,29 +50,13 @@ export function ContactForm() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
-  const [roof, setRoof] = useState<(typeof roofTypes)[number]>("Metal");
+  const [roof, setRoof] = useState<(typeof roofTypes)[number] | "">("");
   const [propertyKind, setPropertyKind] = useState<(typeof propertyKinds)[number]>("Not sure");
   const [plan, setPlan] = useState<(typeof planChoices)[number]>(defaultPlan);
   const [need, setNeed] = useState<(typeof needs)[number]>(defaultNeed);
   const [message, setMessage] = useState("");
   const [gotcha, setGotcha] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "copied">("idle");
-
-  const body = useMemo(() => {
-    return [
-      `Name: ${name}`,
-      `Phone: ${phone}`,
-      `Email: ${email || "—"}`,
-      `Address: ${address || "—"}`,
-      `Property: ${propertyKind}`,
-      `Roof type: ${roof}`,
-      `Need: ${need}`,
-      `Membership: ${plan}`,
-      "",
-      "Message:",
-      message || "—",
-    ].join("\n");
-  }, [name, phone, email, address, propertyKind, roof, plan, need, message]);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   function requireBasics() {
     if (!name.trim() || !phone.trim()) {
@@ -87,7 +71,7 @@ export function ContactForm() {
     setPhone("");
     setEmail("");
     setAddress("");
-    setRoof("Metal");
+    setRoof("");
     setPropertyKind("Not sure");
     setPlan(defaultPlan);
     setNeed(defaultNeed);
@@ -105,7 +89,7 @@ export function ContactForm() {
       phone: phone.trim(),
       address: address.trim() || "—",
       property: propertyKind,
-      roof,
+      roof: roof || "—",
       need,
       membership: plan,
       message: message.trim() || "—",
@@ -146,12 +130,6 @@ export function ContactForm() {
     }
   }
 
-  async function onCopy() {
-    if (!requireBasics()) return;
-    await navigator.clipboard.writeText(body);
-    setStatus("copied");
-  }
-
   return (
     <form action={company.formspree} method="POST" onSubmit={onSubmit} className="grid gap-5">
       <input type="hidden" name="_subject" value={`${company.legalName} — ${need}`} />
@@ -187,6 +165,9 @@ export function ContactForm() {
         <label className="field">
           <span>Roof type</span>
           <select name="roof" value={roof} onChange={(e) => setRoof(e.target.value as typeof roof)}>
+            <option value="" disabled>
+              Select roof type
+            </option>
             {roofTypes.map((t) => (
               <option key={t}>{t}</option>
             ))}
@@ -244,13 +225,7 @@ export function ContactForm() {
         <button type="submit" className="btn-primary" disabled={status === "sending"}>
           {status === "sending" ? "Sending…" : "Send request"}
         </button>
-        <button type="button" className="btn-ghost" onClick={onCopy} disabled={status === "sending"}>
-          Copy to send later
-        </button>
       </div>
-      {status === "copied" && (
-        <p className="text-sm text-steel">Copied. Paste it into a text or an email.</p>
-      )}
       {status === "sent" && (
         <p className="text-sm text-steel">Sent. We’ll call you back.</p>
       )}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { company, displayPhone } from "@/lib/company";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description: `${company.legalName}. 20+ years of roofing experience. Inspections, repairs, yearly memberships, and new roofs in ${company.serviceArea} — second homes, cabins, rentals, and year-round houses.`,
 };

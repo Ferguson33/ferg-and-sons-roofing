@@ -9,7 +9,7 @@ cd /Users/CharityYork/ferg-and-sons-roofing
 npm run dev
 ```
 
-Live: https://ferg-and-sons-roofing.vercel.app  
+Live: https://fergandsonsroofing.com  
 GitHub: https://github.com/Ferguson33/ferg-and-sons-roofing
 
 Local: `npm run dev` → http://localhost:3001 (`/sample-report` is an example only).
