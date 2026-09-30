@@ -10,6 +10,7 @@ import {
 } from "@/lib/company";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/plans" },
   title: "Memberships",
   description: `Inspection / Bid ${money(plans.inspection.price)}, Essential ${money(plans.essential.price)} / year, or Preferred ${money(plans.preferred.price)} / year. For second homes, cabins, rentals, Airbnbs, and year-round houses in Sublette County.`,
 };

@@ -20,6 +20,9 @@ const jsonLd = {
   },
   areaServed: [
     { "@type": "City", name: "Pinedale" },
+    { "@type": "City", name: "Marbleton" },
+    { "@type": "City", name: "Big Piney" },
+    { "@type": "Place", name: "Daniel" },
     { "@type": "AdministrativeArea", name: "Sublette County" },
     { "@type": "State", name: "Wyoming" },
   ],

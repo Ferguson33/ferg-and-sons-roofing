@@ -35,17 +35,18 @@ export function Footer() {
                 {displayPhone()}
               </a>
             </li>
-            <li>
+            <li className="[overflow-wrap:anywhere]">
               <a className="hover:text-red" href={`mailto:${company.email}`}>
                 {company.email}
               </a>
             </li>
             <li className="pt-2">{company.serviceArea}</li>
+            <li className="font-medium text-white">{company.insured}</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-6xl px-4 py-4 text-sm text-steel sm:px-6">
+        <p className="mx-auto max-w-6xl px-4 py-4 text-sm text-steel-light sm:px-6">
           © {new Date().getFullYear()} {company.legalName}
         </p>
       </div>

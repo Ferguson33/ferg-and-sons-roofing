@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 import { company, displayPhone, mailingLine } from "@/lib/company";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/sample-report" },
   title: "Sample roof report",
   description: `Example of the dated roof report ${company.legalName} gives the owner after an inspection. Photos from the roof, findings, and the repair list.`,
 };
@@ -234,9 +235,9 @@ export default function SampleReportPage() {
               </p>
             </div>
             <div className="sm:text-right">
-              <p className="font-display text-2xl uppercase tracking-[0.14em] text-charcoal sm:text-3xl">
-                Roof inspection / bid
-              </p>
+              <h1 className="font-display text-2xl uppercase tracking-[0.14em] text-charcoal sm:text-3xl">
+                Sample roof report: inspection / bid
+              </h1>
               <p className="mt-2 font-medium">FERG-2026-001</p>
               <p className="text-sm text-steel">September 1, 2026</p>
             </div>
