@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Camera, Home, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { MembershipAudience } from "@/components/MembershipAudience";
 import { company, displayPhone, money, plans } from "@/lib/company";
 
@@ -10,56 +10,100 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const callLabel = `Call ${company.owner.split(" ")[0]} ${displayPhone()}`;
+
   return (
     <>
       <section className="min-w-0 bg-paper">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
-          <div>
-            <p className="font-display text-lg font-bold uppercase leading-snug tracking-[0.06em] text-charcoal sm:text-xl sm:tracking-[0.1em] md:text-2xl">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:py-20">
+          <div className="min-w-0">
+            <p className="font-display text-base font-bold uppercase leading-snug tracking-[0.08em] text-charcoal sm:text-xl sm:tracking-[0.1em]">
               {company.legalName}
             </p>
-            <p className="mt-2 text-sm text-steel sm:text-base">
-              {company.serviceArea}
-            </p>
-            <h1 className="mt-6 text-4xl leading-[1.1] text-charcoal sm:text-6xl">
-              <span className="block">Inspections</span>
-              <span className="block">Repairs</span>
-              <span className="block">New roofs</span>
+            <h1 className="mt-3 text-balance text-4xl leading-[1.08] text-charcoal sm:mt-5 sm:text-5xl lg:text-6xl">
+              Pinedale roofer: inspections, repairs, new roofs
             </h1>
-            <p className="mt-5 max-w-xl min-w-0 text-lg leading-relaxed break-words text-steel">
-              Yearly memberships too — cabins, rentals, and year-round homes.
+            <p className="mt-3 max-w-xl text-lg leading-snug text-steel sm:mt-5 sm:leading-relaxed">
+              {`Cabins, second homes, and rentals: we check the roof when you can't.`}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/plans" className="btn-primary">
-                Memberships
-                <ArrowRight className="h-4 w-4" />
+            <div className="mt-5 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+              <Link href="/contact?need=inspection" className="btn-primary">
+                {money(plans.inspection.price)} Inspection / Bid
               </Link>
-              <Link href="/contact?need=inspection" className="btn-ghost">
-                Inspections
-              </Link>
-              <Link href="/contact?need=bid" className="btn-ghost">
-                New roofs
-              </Link>
+              <a href={`tel:${company.tel}`} className="btn-ghost">
+                <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />
+                {callLabel}
+              </a>
             </div>
-            <p className="mt-5 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:gap-x-5">
-              <Link href="#who-its-for" className="text-sm text-steel hover:text-charcoal">
-                Second homes, cabins, rentals →
+            <p className="mt-4">
+              <Link
+                href="/plans"
+                className="inline-flex min-h-11 items-center gap-1.5 text-base font-medium text-red hover:text-red-dark"
+              >
+                Yearly memberships from {money(plans.essential.price)}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link href="#christmas-lights" className="text-sm text-steel hover:text-charcoal">
-                Christmas lights — hang and take-down →
-              </Link>
+            </p>
+            <p className="mt-3 max-w-xl text-sm leading-snug text-steel">
+              {company.insured} · {company.yearsHere} years roofing · Serving Pinedale,
+              Marbleton, Big Piney, Daniel, and Sublette County
             </p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-sm lg:aspect-[5/4]">
+            {/* TODO: swap for a real finished-roof photo from Josh when available. */}
             <Image
-              src="/images/jobs/metal-panels-in.jpg"
-              alt="Green metal panels fastened on a roof"
+              src="/images/sample-report/08.jpg"
+              alt="Rust-red metal roof trim and ridge on a Sublette County home"
               fill
               priority
-              className="object-cover"
+              className="object-cover object-[center_40%]"
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-steel-light bg-white" aria-labelledby="why-ferg">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+          <h2 id="why-ferg" className="text-2xl text-charcoal sm:text-3xl">
+            Why Ferg & Sons
+          </h2>
+          <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:mt-10 lg:grid-cols-4 lg:gap-8">
+            <li className="min-w-0">
+              <MapPin className="h-6 w-6 text-red" aria-hidden="true" />
+              <h3 className="mt-3 text-lg leading-snug text-charcoal">Local</h3>
+              <p className="mt-2 text-sm leading-snug text-steel">
+                Based in Pinedale. We serve Marbleton, Big Piney, Daniel, and all of
+                Sublette County.
+              </p>
+            </li>
+            <li className="min-w-0">
+              <ShieldCheck className="h-6 w-6 text-red" aria-hidden="true" />
+              <h3 className="mt-3 text-lg leading-snug text-charcoal">Fully insured</h3>
+              <p className="mt-2 text-sm leading-snug text-steel">{company.insured} for roof work.</p>
+            </li>
+            <li className="min-w-0">
+              <Home className="h-6 w-6 text-red" aria-hidden="true" />
+              <h3 className="mt-3 text-lg leading-snug text-charcoal">Remote-owner friendly</h3>
+              <p className="mt-2 text-sm leading-snug text-steel">
+                Not in town? We check the roof and tell you what we found.
+              </p>
+            </li>
+            <li className="min-w-0">
+              <Camera className="h-6 w-6 text-red" aria-hidden="true" />
+              <h3 className="mt-3 text-lg leading-snug text-charcoal">Photo reports</h3>
+              <p className="mt-2 text-sm leading-snug text-steel">
+                A dated written report with photos after every inspection.
+              </p>
+              <Link
+                href="/sample-report"
+                className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-red hover:text-red-dark"
+              >
+                See a sample
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </li>
+          </ul>
         </div>
       </section>
 
