@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <>
       <section className="min-w-0 bg-paper">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:gap-12 lg:py-20">
           <div className="min-w-0">
             <p className="font-display text-base font-bold uppercase leading-snug tracking-[0.08em] text-charcoal sm:text-xl sm:tracking-[0.1em]">
               {company.legalName}
@@ -44,7 +44,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </p>
-            <p className="mt-3 max-w-xl text-sm leading-snug text-steel">
+            <p className="mt-3 text-sm leading-snug text-steel lg:whitespace-nowrap">
               {company.insured} · {company.yearsHere} years roofing · Serving Pinedale,
               Marbleton, Big Piney, Daniel, and Sublette County
             </p>
